@@ -30,7 +30,6 @@ class Formsmd {
 		errorFieldKey: "field",
 		errorMessageKey: "message",
 		footer: "",
-		formsmdBranding: "",
 		getHeaders: {},
 		isFullPage: false,
 		paddingInlineBottom: 20,
@@ -94,7 +93,6 @@ class Formsmd {
 	 * @property {string} [errorFieldKey] The key used to identify the field in error objects. Default is `"field"`.
 	 * @property {string} [errorMessageKey] The key used to identify the error message in error objects. Default is `"message"`.
 	 * @property {"hide"|"show"} [footer] Controls visibility of the footer.
-	 * @property {"hide"|"show"} [formsmdBranding] Controls visibility of the Forms.md branding.
 	 * @property {Object} [getHeaders] Headers for GET requests.
 	 * @property {boolean} [isFullPage] Whether to render in full page mode. Default is `false`.
 	 * @property {number} [paddingInlineBottom] Padding bottom for inline pages or forms. Default is `20`.
@@ -148,13 +146,6 @@ class Formsmd {
 			// Footer
 			if (options.footer === "hide" || options.footer === "show") {
 				this.options.footer = options.footer;
-			}
-			// Forms.md branding
-			if (
-				options.formsmdBranding === "hide" ||
-				options.formsmdBranding === "show"
-			) {
-				this.options.formsmdBranding = options.formsmdBranding;
 			}
 			// GET headers
 			if (
@@ -403,11 +394,6 @@ class Formsmd {
 			`#! color = ${theme.color} || ${themeAltScheme.color}`,
 		);
 
-		if (this.options.formsmdBranding !== undefined) {
-			templateSettingsFromOptions.push(
-				`#! formsmd-branding = ${this.options.formsmdBranding}`,
-			);
-		}
 		if (this.options.footer !== undefined) {
 			templateSettingsFromOptions.push(`#! footer = ${this.options.footer}`);
 		}

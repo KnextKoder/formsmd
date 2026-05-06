@@ -47,7 +47,7 @@
 		"prettier": "^3.2.5",
 		"rtlcss": "^4.1.1",
 		"terser": "^5.30.4",
-		"typescript": "^5.4.2",
+		"typescript": "^6.0.3",
 		"webpack": "^5.90.3",
 		"webpack-cli": "^5.1.4"
 	},

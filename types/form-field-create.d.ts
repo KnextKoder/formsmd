@@ -20,8 +20,8 @@ export function formFieldSetup(
 	useFieldset: boolean,
 ): {
 	startTag: string;
-	validParams: any;
-	restParams: any;
+	validParams: Object;
+	restParams: Object;
 };
 /**
  * Create a text form field. Supported types are "text", "email", "url",

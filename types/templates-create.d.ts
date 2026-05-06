@@ -4,8 +4,8 @@
  * @param {Object} settings
  * @returns {string} the contents of the stylesheet
  */
-export function createStyles(settings: any): string;
-export const madeInLoaderTemplate: '\n<div class="fmd-backdrop"></div>\n\n<div class="fmd-main">\n\t<div class="fmd-main-container">\n\t\t<div class="fmd-loader-container">\n\t\t\t<div class="fmd-text-center fmd-mb-3">\n\t\t\t\t{% if settings["formsmd-branding"] != "hide" %}\n\t\t\t\t{{ translations.madeInLoader | safe }}\n\t\t\t\t{% else %}\n\t\t\t\t<div class="fmd-specific-fs-20 fmd-text-emphasis fmd-fw-bold">{{ translations.loading }}...</div>\n\t\t\t\t{% endif %}\n\t\t\t</div>\n\t\t\t<div class="fmd-loader-progress" role="status" aria-label="{{ translations.loading }}"></div>\n\t\t</div>\n\t</div>\n</div>\n';
+export function createStyles(settings: Object): string;
+export const madeInLoaderTemplate: '\n<div class="fmd-backdrop"></div>\n\n<div class="fmd-main">\n\t<div class="fmd-main-container">\n\t\t<div class="fmd-loader-container">\n\t\t\t<div class="fmd-text-center fmd-mb-3">\n\t\t\t\t<div class="fmd-specific-fs-20 fmd-text-emphasis fmd-fw-bold">{{ translations.loading }}...</div>\n\t\t\t</div>\n\t\t\t<div class="fmd-loader-progress" role="status" aria-label="{{ translations.loading }}"></div>\n\t\t</div>\n\t</div>\n</div>\n';
 /**
  * Create the body template.
  *
@@ -13,9 +13,9 @@ export const madeInLoaderTemplate: '\n<div class="fmd-backdrop"></div>\n\n<div c
  * @returns {{template: string, settings: Object}} the template and the
  * updated settings
  */
-export function createBodyTemplate(settings: any): {
+export function createBodyTemplate(settings: Object): {
 	template: string;
-	settings: any;
+	settings: Object;
 };
 /**
  * Create the content template.
@@ -29,10 +29,10 @@ export function createBodyTemplate(settings: any): {
  */
 export function createContentTemplate(
 	template: string,
-	settings: any,
-	data: any,
+	settings: Object,
+	data: Object,
 	windowAndSanitize: boolean,
 ): {
 	template: string;
-	bindDivTemplates: any;
+	bindDivTemplates: Object;
 };

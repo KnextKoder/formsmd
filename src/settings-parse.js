@@ -375,10 +375,6 @@ function parseSettings(template) {
 			pattern: /^.*$/,
 			accepted: "valid string",
 		},
-		"formsmd-branding": {
-			pattern: /^(hide|show)$/,
-			accepted: "hide || show",
-		},
 		"form-style": {
 			pattern: /^classic$/,
 			accepted: "classic",

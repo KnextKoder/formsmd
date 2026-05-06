@@ -13,7 +13,7 @@ export function parseDivs(
 	cssPrefix: string,
 ): {
 	template: string;
-	bindDivTemplates: any;
+	bindDivTemplates: Object;
 };
 /**
  * Given a template string, parse the bind <span> elements, and return the

@@ -8,5 +8,5 @@
  */
 export function parseDataBlocks(template: string): {
 	template: string;
-	data: any;
+	data: Object;
 };

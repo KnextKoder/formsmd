@@ -25,7 +25,6 @@ export class Formsmd {
 	 * @property {string} [errorFieldKey] The key used to identify the field in error objects. Default is `"field"`.
 	 * @property {string} [errorMessageKey] The key used to identify the error message in error objects. Default is `"message"`.
 	 * @property {"hide"|"show"} [footer] Controls visibility of the footer.
-	 * @property {"hide"|"show"} [formsmdBranding] Controls visibility of the Forms.md branding.
 	 * @property {Object} [getHeaders] Headers for GET requests.
 	 * @property {boolean} [isFullPage] Whether to render in full page mode. Default is `false`.
 	 * @property {number} [paddingInlineBottom] Padding bottom for inline pages or forms. Default is `20`.
@@ -59,146 +58,148 @@ export class Formsmd {
 			/**
 			 * The default or initial color scheme of the page. Default is `"light"`.
 			 */
-			colorScheme?: "light" | "dark";
+			colorScheme?: "light" | "dark" | undefined;
 			/**
 			 * The key used to identify the field in error objects. Default is `"field"`.
 			 */
-			errorFieldKey?: string;
+			errorFieldKey?: string | undefined;
 			/**
 			 * The key used to identify the error message in error objects. Default is `"message"`.
 			 */
-			errorMessageKey?: string;
+			errorMessageKey?: string | undefined;
 			/**
 			 * Controls visibility of the footer.
 			 */
-			footer?: "hide" | "show";
-			/**
-			 * Controls visibility of the Forms.md branding.
-			 */
-			formsmdBranding?: "hide" | "show";
+			footer?: "hide" | "show" | undefined;
 			/**
 			 * Headers for GET requests.
 			 */
-			getHeaders?: any;
+			getHeaders?: Object | undefined;
 			/**
 			 * Whether to render in full page mode. Default is `false`.
 			 */
-			isFullPage?: boolean;
+			isFullPage?: boolean | undefined;
 			/**
 			 * Padding bottom for inline pages or forms. Default is `20`.
 			 */
-			paddingInlineBottom?: number;
+			paddingInlineBottom?: number | undefined;
 			/**
 			 * Horizontal padding for inline pages or forms. Default is `0`.
 			 */
-			paddingInlineHorizontal?: number;
+			paddingInlineHorizontal?: number | undefined;
 			/**
 			 * Padding top for inline pages or forms. Default is `20`.
 			 */
-			paddingInlineTop?: number;
+			paddingInlineTop?: number | undefined;
 			/**
 			 * Controls visibility and function of the page progress.
 			 */
-			pageProgress?: "hide" | "show" | "decorative";
+			pageProgress?: "hide" | "show" | "decorative" | undefined;
 			/**
 			 * Extra data sent with POST requests.
 			 */
-			postData?: any;
+			postData?: Object | undefined;
 			/**
 			 * Headers for POST requests.
 			 */
-			postHeaders?: any;
+			postHeaders?: Object | undefined;
 			/**
 			 * Whether to prioritize URL form data. Default is `false`.
 			 */
-			prioritizeURLFormData?: boolean;
+			prioritizeURLFormData?: boolean | undefined;
 			/**
 			 * The Google reCAPTCHA attributes.
 			 */
-			recaptcha?: {
-				/**
-				 * Google reCAPTCHA site key.
-				 */
-				siteKey?: string;
-				/**
-				 * The action name. Default is `"submit"`.
-				 */
-				action?: string;
-				/**
-				 * The position of the reCAPTCHA badge. Default is `"bottomleft"`.
-				 */
-				badgePosition?: "bottomleft" | "bottomright" | "inline";
-				/**
-				 * Whether to hide the reCAPTCHA badge. Default is `false`.
-				 */
-				hideBadge?: boolean;
-			};
+			recaptcha?:
+				| {
+						/**
+						 * Google reCAPTCHA site key.
+						 */
+						siteKey?: string | undefined;
+						/**
+						 * The action name. Default is `"submit"`.
+						 */
+						action?: string | undefined;
+						/**
+						 * The position of the reCAPTCHA badge. Default is `"bottomleft"`.
+						 */
+						badgePosition?: "inline" | "bottomleft" | "bottomright" | undefined;
+						/**
+						 * Whether to hide the reCAPTCHA badge. Default is `false`.
+						 */
+						hideBadge?: boolean | undefined;
+				  }
+				| undefined;
 			/**
 			 * Whether to sanitize template. Default is `true`.
 			 */
-			sanitize?: boolean;
+			sanitize?: boolean | undefined;
 			/**
 			 * Whether to save form data in local storage. Default is `true`.
 			 */
-			saveState?: boolean;
+			saveState?: boolean | undefined;
 			/**
 			 * Whether to send files as base64. Default is `false`.
 			 */
-			sendFilesAsBase64?: boolean;
+			sendFilesAsBase64?: boolean | undefined;
 			/**
 			 * Whether to set color scheme attributes again.
 			 */
-			setColorSchemeAttrsAgain?: boolean;
+			setColorSchemeAttrsAgain?: boolean | undefined;
 			/**
 			 * Controls visibility of next and previous buttons.
 			 */
-			slideControls?: "hide" | "show";
+			slideControls?: "hide" | "show" | undefined;
 			/**
 			 * The index of the first slide to make active. Default is `0`.
 			 */
-			startSlide?: number;
+			startSlide?: number | undefined;
 			/**
 			 * Dark theme.
 			 */
-			themeDark?: {
-				/**
-				 * The primary color (must be HTML name, hex code, or RGB) used on buttons, form fields, etc.
-				 */
-				accent?: string;
-				/**
-				 * The text color (must be HTML name, hex code, or RGB) used on `accent` background, for example, the text on buttons.
-				 */
-				accentForeground?: string;
-				/**
-				 * The `background-color` of the page (must be HTML name, hex code, or RGB).
-				 */
-				backgroundColor?: string;
-				/**
-				 * The `color` of the text on the page (must be HTML name, hex code, or RGB).
-				 */
-				color?: string;
-			};
+			themeDark?:
+				| {
+						/**
+						 * The primary color (must be HTML name, hex code, or RGB) used on buttons, form fields, etc.
+						 */
+						accent?: string | undefined;
+						/**
+						 * The text color (must be HTML name, hex code, or RGB) used on `accent` background, for example, the text on buttons.
+						 */
+						accentForeground?: string | undefined;
+						/**
+						 * The `background-color` of the page (must be HTML name, hex code, or RGB).
+						 */
+						backgroundColor?: string | undefined;
+						/**
+						 * The `color` of the text on the page (must be HTML name, hex code, or RGB).
+						 */
+						color?: string | undefined;
+				  }
+				| undefined;
 			/**
 			 * Light theme.
 			 */
-			themeLight?: {
-				/**
-				 * The primary color (must be HTML name, hex code, or RGB) used on buttons, form fields, etc.
-				 */
-				accent?: string;
-				/**
-				 * The text color (must be HTML name, hex code, or RGB) used on `accent` background, for example, the text on buttons.
-				 */
-				accentForeground?: string;
-				/**
-				 * The `background-color` of the page (must be HTML name, hex code, or RGB).
-				 */
-				backgroundColor?: string;
-				/**
-				 * The `color` of the text on the page (must be HTML name, hex code, or RGB).
-				 */
-				color?: string;
-			};
+			themeLight?:
+				| {
+						/**
+						 * The primary color (must be HTML name, hex code, or RGB) used on buttons, form fields, etc.
+						 */
+						accent?: string | undefined;
+						/**
+						 * The text color (must be HTML name, hex code, or RGB) used on `accent` background, for example, the text on buttons.
+						 */
+						accentForeground?: string | undefined;
+						/**
+						 * The `background-color` of the page (must be HTML name, hex code, or RGB).
+						 */
+						backgroundColor?: string | undefined;
+						/**
+						 * The `color` of the text on the page (must be HTML name, hex code, or RGB).
+						 */
+						color?: string | undefined;
+				  }
+				| undefined;
 		},
 	);
 	options: {
@@ -206,7 +207,6 @@ export class Formsmd {
 		errorFieldKey: string;
 		errorMessageKey: string;
 		footer: string;
-		formsmdBranding: string;
 		getHeaders: {};
 		isFullPage: boolean;
 		paddingInlineBottom: number;
@@ -241,22 +241,24 @@ export class Formsmd {
 			color: string;
 		};
 	};
-	container: Element | Document | HTMLElement;
+	container: Element | HTMLElement | Document;
 	_template: string;
 	/**
 	 * Set the state to defaults.
 	 */
 	setStateToDefaults: () => void;
-	state: {
-		bindDivTemplates: {};
-		data: {};
-		fieldTypes: {};
-		formData: {};
-		settings: any;
-		slideData: {
-			currentIndex: number;
-		};
-	};
+	state:
+		| {
+				bindDivTemplates: {};
+				data: {};
+				fieldTypes: {};
+				formData: {};
+				settings: Object;
+				slideData: {
+					currentIndex: number;
+				};
+		  }
+		| undefined;
 	/**
 	 * Add a single attribute value to an HTML element.
 	 *
@@ -557,7 +559,7 @@ export class Formsmd {
 		end: boolean,
 	) => Promise<{
 		ok: boolean;
-		json: any;
+		json: Object;
 	}>;
 	/**
 	 * Go through each slide (before the current one) to get the previous one to
@@ -633,14 +635,14 @@ export class Formsmd {
 	 * @param {Object} json
 	 * @returns {Array.<string>}
 	 */
-	getSubmissionErrors: (json: any) => Array<string>;
+	getSubmissionErrors: (json: Object) => Array<string>;
 	/**
 	 * Called when the user reaches the end slide. This function can be
 	 * overridden to do something when the user reaches completion.
 	 *
 	 * @param {Object} json
 	 */
-	onCompletion: (json: any) => void;
+	onCompletion: (json: Object) => void;
 	/**
 	 * Go to the next slide.
 	 *
@@ -678,7 +680,7 @@ export class Formsmd {
 	 * @param {boolean} isFirstInit
 	 */
 	_init: (isFirstInit: boolean) => void;
-	template: string;
+	template: string | undefined;
 	/**
 	 * Initialize for the first time.
 	 */

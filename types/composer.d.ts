@@ -5,39 +5,39 @@ export type TranslationsType = {
 	/**
 	 * The text in English.
 	 */
-	en?: string;
+	en?: string | undefined;
 	/**
 	 * The text in Arabic.
 	 */
-	ar?: string;
+	ar?: string | undefined;
 	/**
 	 * The text in Bengali.
 	 */
-	bn?: string;
+	bn?: string | undefined;
 	/**
 	 * The text in German.
 	 */
-	de?: string;
+	de?: string | undefined;
 	/**
 	 * The text in Spanish.
 	 */
-	es?: string;
+	es?: string | undefined;
 	/**
 	 * The text in French.
 	 */
-	fr?: string;
+	fr?: string | undefined;
 	/**
 	 * The text in Japanese.
 	 */
-	ja?: string;
+	ja?: string | undefined;
 	/**
 	 * The text in Portuguese.
 	 */
-	pt?: string;
+	pt?: string | undefined;
 	/**
 	 * The text in Chinese.
 	 */
-	zh?: string;
+	zh?: string | undefined;
 };
 /**
  * Get the shared form field params.
@@ -47,7 +47,7 @@ export type TranslationsType = {
  * @returns {Array.<string>}
  */
 export function composeSharedFieldParams(
-	params: any,
+	params: Object,
 	formDelimiter: string,
 ): Array<string>;
 /**
@@ -56,7 +56,7 @@ export function composeSharedFieldParams(
  * @param {Object} params
  * @returns {Array.<string>}
  */
-export function composeAttrs(params: any): Array<string>;
+export function composeAttrs(params: Object): Array<string>;
 /**
  * Translations.
  *
@@ -108,7 +108,6 @@ export class Composer {
 	 * @property {string} [fontImportUrl] URL to import custom fonts (must be valid CSS for the `@import` property).
 	 * @property {"sm"|"lg"} [fontSize] Makes the `font-size` of everything on the page smaller or larger.
 	 * @property {string} [formDelimiter] Used to separate parameters when creating form fields. Default is `"|"`.
-	 * @property {"hide"|"show"} [formsmdBranding] Controls visibility of the Forms.md branding.
 	 * @property {"classic"} [formStyle] If set to `"classic"`, the form fields will have a classic appearance.
 	 * @property {"hide"|"show"} [footer] Controls visibility of the footer.
 	 * @property {"json"|"csv"|"tsv"} [getFormat] The format for reading data. Default is `"json"`. [Read docs](https://formsmd.gitbook.io/docs/set-and-read-data).
@@ -147,203 +146,209 @@ export class Composer {
 		/**
 		 * If set to `"all-slides"`, when a new slide becomes active (including the first slide on page load), the very first form field will be auto-focused.
 		 */
-		autofocus?: "all-slides";
+		autofocus?: "all-slides" | undefined;
 		/**
 		 * The primary color (must be HTML name, hex code, or RGB) used on buttons, form fields, etc. [Supports up to two values](https://formsmd.gitbook.io/docs/settings#different-values-for-light-mode-and-dark-mode).
 		 */
-		accent?: string;
+		accent?: string | undefined;
 		/**
 		 * The text color (must be HTML name, hex code, or RGB) used on `accent` background, for example, the text on buttons. [Supports up to two values](https://formsmd.gitbook.io/docs/settings#different-values-for-light-mode-and-dark-mode).
 		 */
-		accentForeground?: string;
+		accentForeground?: string | undefined;
 		/**
 		 * Sets an overlay of the `background-color` on top of the background image. [Supports up to two values](https://formsmd.gitbook.io/docs/settings#different-values-for-light-mode-and-dark-mode).
 		 */
-		backdropOpacity?: string;
+		backdropOpacity?: string | undefined;
 		/**
 		 * The `background-color` of the page (must be HTML name, hex code, or RGB). [Supports up to two values](https://formsmd.gitbook.io/docs/settings#different-values-for-light-mode-and-dark-mode).
 		 */
-		backgroundColor?: string;
+		backgroundColor?: string | undefined;
 		/**
 		 * The `background-image` of the page. [Supports up to two values](https://formsmd.gitbook.io/docs/settings#different-values-for-light-mode-and-dark-mode).
 		 */
-		backgroundImage?: string;
+		backgroundImage?: string | undefined;
 		/**
 		 * An image of your logo added to the header of the page in the top-left corner (must be valid Markdown image). [Supports up to two values](https://formsmd.gitbook.io/docs/settings#different-values-for-light-mode-and-dark-mode).
 		 */
-		brand?: string;
+		brand?: string | undefined;
 		/**
 		 * Set the alignment of the slide CTA buttons.
 		 */
-		buttonAlignment?: "center" | "end" | "stretch";
+		buttonAlignment?: "center" | "end" | "stretch" | undefined;
 		/**
 		 * The `color` of the text on the page (must be HTML name, hex code, or RGB). [Supports up to two values](https://formsmd.gitbook.io/docs/settings#different-values-for-light-mode-and-dark-mode).
 		 */
-		color?: string;
+		color?: string | undefined;
 		/**
 		 * The default or initial color scheme of the page. Default is `"light"`.
 		 */
-		colorScheme?: "light" | "dark";
+		colorScheme?: "light" | "dark" | undefined;
 		/**
 		 * Determines how color scheme preference is saved and applied. Default is `"domain-wide"`.
 		 */
-		colorSchemeScope?: "domain-wide" | "isolate";
+		colorSchemeScope?: "domain-wide" | "isolate" | undefined;
 		/**
 		 * If set to `"show"`, a toggle button will be available in the footer.
 		 */
-		colorSchemeToggle?: "show";
+		colorSchemeToggle?: "show" | undefined;
 		/**
 		 * Prefix added to all CSS classes. Default is `"fmd-"`.
 		 */
-		cssPrefix?: string;
+		cssPrefix?: string | undefined;
 		/**
 		 * Adds a call to action link styled as a button on the header (must be valid Markdown link).
 		 */
-		cta?: string;
+		cta?: string | undefined;
 		/**
 		 * The direction of the page's text. Default is `"ltr"`.
 		 */
-		dir?: "ltr" | "rtl";
+		dir?: "ltr" | "rtl" | undefined;
 		/**
 		 * The favicon of the page.
 		 */
-		favicon?: string;
+		favicon?: string | undefined;
 		/**
 		 * If set to `"sm"`, the size of form fields will be made smaller.
 		 */
-		fieldSize?: "sm";
+		fieldSize?: "sm" | undefined;
 		/**
 		 * The `font-family` used on the page.
 		 */
-		fontFamily?: string;
+		fontFamily?: string | undefined;
 		/**
 		 * URL to import custom fonts (must be valid CSS for the `@import` property).
 		 */
-		fontImportUrl?: string;
+		fontImportUrl?: string | undefined;
 		/**
 		 * Makes the `font-size` of everything on the page smaller or larger.
 		 */
-		fontSize?: "sm" | "lg";
+		fontSize?: "sm" | "lg" | undefined;
 		/**
 		 * Used to separate parameters when creating form fields. Default is `"|"`.
 		 */
-		formDelimiter?: string;
-		/**
-		 * Controls visibility of the Forms.md branding.
-		 */
-		formsmdBranding?: "hide" | "show";
+		formDelimiter?: string | undefined;
 		/**
 		 * If set to `"classic"`, the form fields will have a classic appearance.
 		 */
-		formStyle?: "classic";
+		formStyle?: "classic" | undefined;
 		/**
 		 * Controls visibility of the footer.
 		 */
-		footer?: "hide" | "show";
+		footer?: "hide" | "show" | undefined;
 		/**
 		 * The format for reading data. Default is `"json"`. [Read docs](https://formsmd.gitbook.io/docs/set-and-read-data).
 		 */
-		getFormat?: "json" | "csv" | "tsv";
+		getFormat?: "json" | "csv" | "tsv" | undefined;
 		/**
 		 * Name used for objects when reading data. Default is `"objects"`. [Read docs](https://formsmd.gitbook.io/docs/set-and-read-data).
 		 */
-		getObjectsName?: string;
+		getObjectsName?: string | undefined;
 		/**
 		 * URL for reading data. [Read docs](https://formsmd.gitbook.io/docs/set-and-read-data).
 		 */
-		getUrl?: string;
+		getUrl?: string | undefined;
 		/**
 		 * Controls header visibility and alignment.
 		 */
-		header?: "hide" | "show" | "align";
+		header?: "hide" | "show" | "align" | undefined;
 		/**
 		 * If set to `"anchored"`, all headings will contain an anchor link.
 		 */
-		headings?: "anchored";
+		headings?: "anchored" | undefined;
 		/**
 		 * Identifier for the page or form.
 		 */
-		id?: string;
+		id?: string | undefined;
 		/**
 		 * If set to `"classic"`, the question and description of form fields will be made smaller.
 		 */
-		labelStyle?: "classic";
+		labelStyle?: "classic" | undefined;
 		/**
 		 * Sets the language for automatic translation. Default is `"en"`.
 		 */
-		localization?: keyof typeof translations;
+		localization?:
+			| "en"
+			| "ar"
+			| "bn"
+			| "de"
+			| "es"
+			| "fr"
+			| "ja"
+			| "pt"
+			| "zh"
+			| undefined;
 		/**
 		 * Sets the author metadata.
 		 */
-		metaAuthor?: string;
+		metaAuthor?: string | undefined;
 		/**
 		 * Sets the description metadata.
 		 */
-		metaDescription?: string;
+		metaDescription?: string | undefined;
 		/**
 		 * Sets the Open Graph image.
 		 */
-		metaImage?: string;
+		metaImage?: string | undefined;
 		/**
 		 * Sets the keywords metadata.
 		 */
-		metaKeywords?: string;
+		metaKeywords?: string | undefined;
 		/**
 		 * Sets the Open Graph type.
 		 */
-		metaType?: string;
+		metaType?: string | undefined;
 		/**
 		 * Sets the Open Graph URL.
 		 */
-		metaUrl?: string;
+		metaUrl?: string | undefined;
 		/**
 		 * Determines the layout of the page. Default is `"form-slides"`.
 		 */
-		page?: "form-slides" | "slides" | "single";
+		page?: "form-slides" | "slides" | "single" | undefined;
 		/**
 		 * Controls visibility and function of the page progress.
 		 */
-		pageProgress?: "hide" | "show" | "decorative";
+		pageProgress?: "hide" | "show" | "decorative" | undefined;
 		/**
 		 * Controls visibility of input placeholders.
 		 */
-		placeholders?: "hide" | "show";
+		placeholders?: "hide" | "show" | undefined;
 		/**
 		 * When sending responses directly to Google Sheets, this specifies which sheet to save responses to.
 		 */
-		postSheetName?: string;
+		postSheetName?: string | undefined;
 		/**
 		 * URL to send form responses to using POST request.
 		 */
-		postUrl?: string;
+		postUrl?: string | undefined;
 		/**
 		 * If set to `"show"`, the restart button will be visible.
 		 */
-		restartButton?: "show";
+		restartButton?: "show" | undefined;
 		/**
 		 * Controls rounding of buttons and UI elements.
 		 */
-		rounded?: "none" | "pill";
+		rounded?: "none" | "pill" | undefined;
 		/**
 		 * Controls visibility of next and previous buttons.
 		 */
-		slideControls?: "hide" | "show";
+		slideControls?: "hide" | "show" | undefined;
 		/**
 		 * Specifies where new slides are created. Default is `"---"`.
 		 */
-		slideDelimiter?: string;
+		slideDelimiter?: string | undefined;
 		/**
 		 * Custom text for submit buttons.
 		 */
-		submitButtonText?: string;
+		submitButtonText?: string | undefined;
 		/**
 		 * The title of the page.
 		 */
-		title?: string;
+		title?: string | undefined;
 		/**
 		 * If set to `"start"`, content is aligned to the top of the page vertically.
 		 */
-		verticalAlignment?: "start";
+		verticalAlignment?: "start" | undefined;
 	});
 	template: string;
 	settings: {};
@@ -406,86 +411,90 @@ export class Composer {
 			/**
 			 * When set, the field becomes required.
 			 */
-			required?: true;
+			required?: true | undefined;
 			/**
 			 * Any extra information that the user may need to fill out the form.
 			 */
-			description?: string;
+			description?: string | undefined;
 			/**
 			 * When set to `"sm"`, the font sizes of the question, description, and answer are made smaller.
 			 */
-			fieldSize?: "sm";
+			fieldSize?: "sm" | undefined;
 			/**
 			 * When set to `"classic"`, the question and description of the form field are made smaller.
 			 */
-			labelStyle?: "classic";
+			labelStyle?: "classic" | undefined;
 			/**
 			 * When set, the question and description of the form field are made smaller.
 			 */
-			subfield?: true;
+			subfield?: true | undefined;
 			/**
 			 * When set, the input is disabled.
 			 */
-			disabled?: true;
+			disabled?: true | undefined;
 			/**
 			 * When set, the input will be automatically focused when the parent slide becomes active, or immediately after page load.
 			 */
-			autofocus?: true;
+			autofocus?: true | undefined;
 			/**
 			 * The id attribute of the form field.
 			 */
-			id?: string;
+			id?: string | undefined;
 			/**
 			 * The CSS class names of the form field.
 			 */
-			classNames?: Array<string>;
+			classNames?: string[] | undefined;
 			/**
 			 * Other HTML attributes of the form field.
 			 */
-			attrs?: {
-				/**
-				 * The name of the attribute.
-				 */
-				name: string;
-				/**
-				 * The value of the attribute.
-				 */
-				value: string;
-			}[];
+			attrs?:
+				| {
+						/**
+						 * The name of the attribute.
+						 */
+						name: string;
+						/**
+						 * The value of the attribute.
+						 */
+						value: string;
+				  }[]
+				| undefined;
 			/**
 			 * Display condition for the form field.
 			 */
-			displayCondition?: {
-				/**
-				 * The names of the form fields or data to use in the condition.
-				 */
-				dependencies: Array<string>;
-				/**
-				 * The actual condition.
-				 */
-				condition: string;
-			};
+			displayCondition?:
+				| {
+						/**
+						 * The names of the form fields or data to use in the condition.
+						 */
+						dependencies: Array<string>;
+						/**
+						 * The actual condition.
+						 */
+						condition: string;
+				  }
+				| undefined;
 		} & {
 			/**
 			 * Sets the `placeholder` attribute of the input.
 			 */
-			placeholder?: string;
+			placeholder?: string | undefined;
 			/**
 			 * When set, the input accepts values with one or more lines because the `<textarea>` element is used.
 			 */
-			multiline?: true;
+			multiline?: true | undefined;
 			/**
 			 * If set, this becomes the maximum number of allowed characters in the input.
 			 */
-			maxlength?: number;
+			maxlength?: number | undefined;
 			/**
 			 * If set, the input value must match the given pattern.
 			 */
-			pattern?: string;
+			pattern?: string | undefined;
 			/**
 			 * If set, this becomes the default value of the input.
 			 */
-			value?: string;
+			value?: string | undefined;
 		},
 	) => string;
 	/**
@@ -514,82 +523,86 @@ export class Composer {
 			/**
 			 * When set, the field becomes required.
 			 */
-			required?: true;
+			required?: true | undefined;
 			/**
 			 * Any extra information that the user may need to fill out the form.
 			 */
-			description?: string;
+			description?: string | undefined;
 			/**
 			 * When set to `"sm"`, the font sizes of the question, description, and answer are made smaller.
 			 */
-			fieldSize?: "sm";
+			fieldSize?: "sm" | undefined;
 			/**
 			 * When set to `"classic"`, the question and description of the form field are made smaller.
 			 */
-			labelStyle?: "classic";
+			labelStyle?: "classic" | undefined;
 			/**
 			 * When set, the question and description of the form field are made smaller.
 			 */
-			subfield?: true;
+			subfield?: true | undefined;
 			/**
 			 * When set, the input is disabled.
 			 */
-			disabled?: true;
+			disabled?: true | undefined;
 			/**
 			 * When set, the input will be automatically focused when the parent slide becomes active, or immediately after page load.
 			 */
-			autofocus?: true;
+			autofocus?: true | undefined;
 			/**
 			 * The id attribute of the form field.
 			 */
-			id?: string;
+			id?: string | undefined;
 			/**
 			 * The CSS class names of the form field.
 			 */
-			classNames?: Array<string>;
+			classNames?: string[] | undefined;
 			/**
 			 * Other HTML attributes of the form field.
 			 */
-			attrs?: {
-				/**
-				 * The name of the attribute.
-				 */
-				name: string;
-				/**
-				 * The value of the attribute.
-				 */
-				value: string;
-			}[];
+			attrs?:
+				| {
+						/**
+						 * The name of the attribute.
+						 */
+						name: string;
+						/**
+						 * The value of the attribute.
+						 */
+						value: string;
+				  }[]
+				| undefined;
 			/**
 			 * Display condition for the form field.
 			 */
-			displayCondition?: {
-				/**
-				 * The names of the form fields or data to use in the condition.
-				 */
-				dependencies: Array<string>;
-				/**
-				 * The actual condition.
-				 */
-				condition: string;
-			};
+			displayCondition?:
+				| {
+						/**
+						 * The names of the form fields or data to use in the condition.
+						 */
+						dependencies: Array<string>;
+						/**
+						 * The actual condition.
+						 */
+						condition: string;
+				  }
+				| undefined;
 		} & {
 			/**
 			 * Sets the `placeholder` attribute of the input.
 			 */
-			placeholder?: string;
+			placeholder?: string | undefined;
 			/**
 			 * If set, this becomes the maximum number of allowed characters in the input.
 			 */
-			maxlength?: number;
+			maxlength?: number | undefined;
 			/**
 			 * If set, the input value must match the given pattern.
 			 */
-			pattern?: string;
+			pattern?: string | undefined;
 			/**
 			 * If set, this becomes the default value of the input.
 			 */
-			value?: string;
+			value?: string | undefined;
 		},
 	) => string;
 	/**
@@ -618,82 +631,86 @@ export class Composer {
 			/**
 			 * When set, the field becomes required.
 			 */
-			required?: true;
+			required?: true | undefined;
 			/**
 			 * Any extra information that the user may need to fill out the form.
 			 */
-			description?: string;
+			description?: string | undefined;
 			/**
 			 * When set to `"sm"`, the font sizes of the question, description, and answer are made smaller.
 			 */
-			fieldSize?: "sm";
+			fieldSize?: "sm" | undefined;
 			/**
 			 * When set to `"classic"`, the question and description of the form field are made smaller.
 			 */
-			labelStyle?: "classic";
+			labelStyle?: "classic" | undefined;
 			/**
 			 * When set, the question and description of the form field are made smaller.
 			 */
-			subfield?: true;
+			subfield?: true | undefined;
 			/**
 			 * When set, the input is disabled.
 			 */
-			disabled?: true;
+			disabled?: true | undefined;
 			/**
 			 * When set, the input will be automatically focused when the parent slide becomes active, or immediately after page load.
 			 */
-			autofocus?: true;
+			autofocus?: true | undefined;
 			/**
 			 * The id attribute of the form field.
 			 */
-			id?: string;
+			id?: string | undefined;
 			/**
 			 * The CSS class names of the form field.
 			 */
-			classNames?: Array<string>;
+			classNames?: string[] | undefined;
 			/**
 			 * Other HTML attributes of the form field.
 			 */
-			attrs?: {
-				/**
-				 * The name of the attribute.
-				 */
-				name: string;
-				/**
-				 * The value of the attribute.
-				 */
-				value: string;
-			}[];
+			attrs?:
+				| {
+						/**
+						 * The name of the attribute.
+						 */
+						name: string;
+						/**
+						 * The value of the attribute.
+						 */
+						value: string;
+				  }[]
+				| undefined;
 			/**
 			 * Display condition for the form field.
 			 */
-			displayCondition?: {
-				/**
-				 * The names of the form fields or data to use in the condition.
-				 */
-				dependencies: Array<string>;
-				/**
-				 * The actual condition.
-				 */
-				condition: string;
-			};
+			displayCondition?:
+				| {
+						/**
+						 * The names of the form fields or data to use in the condition.
+						 */
+						dependencies: Array<string>;
+						/**
+						 * The actual condition.
+						 */
+						condition: string;
+				  }
+				| undefined;
 		} & {
 			/**
 			 * Sets the `placeholder` attribute of the input.
 			 */
-			placeholder?: string;
+			placeholder?: string | undefined;
 			/**
 			 * If set, this becomes the maximum number of allowed characters in the input.
 			 */
-			maxlength?: number;
+			maxlength?: number | undefined;
 			/**
 			 * If set, the input value must match the given pattern.
 			 */
-			pattern?: string;
+			pattern?: string | undefined;
 			/**
 			 * If set, this becomes the default value of the input.
 			 */
-			value?: string;
+			value?: string | undefined;
 		},
 	) => string;
 	/**
@@ -729,82 +746,86 @@ export class Composer {
 			/**
 			 * When set, the field becomes required.
 			 */
-			required?: true;
+			required?: true | undefined;
 			/**
 			 * Any extra information that the user may need to fill out the form.
 			 */
-			description?: string;
+			description?: string | undefined;
 			/**
 			 * When set to `"sm"`, the font sizes of the question, description, and answer are made smaller.
 			 */
-			fieldSize?: "sm";
+			fieldSize?: "sm" | undefined;
 			/**
 			 * When set to `"classic"`, the question and description of the form field are made smaller.
 			 */
-			labelStyle?: "classic";
+			labelStyle?: "classic" | undefined;
 			/**
 			 * When set, the question and description of the form field are made smaller.
 			 */
-			subfield?: true;
+			subfield?: true | undefined;
 			/**
 			 * When set, the input is disabled.
 			 */
-			disabled?: true;
+			disabled?: true | undefined;
 			/**
 			 * When set, the input will be automatically focused when the parent slide becomes active, or immediately after page load.
 			 */
-			autofocus?: true;
+			autofocus?: true | undefined;
 			/**
 			 * The id attribute of the form field.
 			 */
-			id?: string;
+			id?: string | undefined;
 			/**
 			 * The CSS class names of the form field.
 			 */
-			classNames?: Array<string>;
+			classNames?: string[] | undefined;
 			/**
 			 * Other HTML attributes of the form field.
 			 */
-			attrs?: {
-				/**
-				 * The name of the attribute.
-				 */
-				name: string;
-				/**
-				 * The value of the attribute.
-				 */
-				value: string;
-			}[];
+			attrs?:
+				| {
+						/**
+						 * The name of the attribute.
+						 */
+						name: string;
+						/**
+						 * The value of the attribute.
+						 */
+						value: string;
+				  }[]
+				| undefined;
 			/**
 			 * Display condition for the form field.
 			 */
-			displayCondition?: {
-				/**
-				 * The names of the form fields or data to use in the condition.
-				 */
-				dependencies: Array<string>;
-				/**
-				 * The actual condition.
-				 */
-				condition: string;
-			};
+			displayCondition?:
+				| {
+						/**
+						 * The names of the form fields or data to use in the condition.
+						 */
+						dependencies: Array<string>;
+						/**
+						 * The actual condition.
+						 */
+						condition: string;
+				  }
+				| undefined;
 		} & {
 			/**
 			 * Sets the `placeholder` attribute of the input.
 			 */
-			placeholder?: string;
+			placeholder?: string | undefined;
 			/**
 			 * If set, this becomes the maximum number of allowed characters in the input.
 			 */
-			maxlength?: number;
+			maxlength?: number | undefined;
 			/**
 			 * If set, the input value must match the given pattern.
 			 */
-			pattern?: string;
+			pattern?: string | undefined;
 			/**
 			 * If set, this becomes the default value of the input.
 			 */
-			value?: string;
+			value?: string | undefined;
 			/**
 			 * The default country code (e.g., `"US"`). Defaults to `"US"` if not specified.
 			 */
@@ -1059,263 +1080,266 @@ export class Composer {
 				| "YT"
 				| "ZA"
 				| "ZM"
-				| "ZW";
+				| "ZW"
+				| undefined;
 			/**
 			 * Array of available country codes (e.g., `["US", "CA", "GB"]`).
 			 */
-			availableCountries?: (
-				| "US"
-				| "AC"
-				| "AD"
-				| "AE"
-				| "AF"
-				| "AG"
-				| "AI"
-				| "AL"
-				| "AM"
-				| "AN"
-				| "AO"
-				| "AQ"
-				| "AR"
-				| "AS"
-				| "AT"
-				| "AU"
-				| "AW"
-				| "AX"
-				| "AZ"
-				| "BA"
-				| "BB"
-				| "BD"
-				| "BE"
-				| "BF"
-				| "BG"
-				| "BH"
-				| "BI"
-				| "BJ"
-				| "BL"
-				| "BM"
-				| "BN"
-				| "BO"
-				| "BQ"
-				| "BR"
-				| "BS"
-				| "BT"
-				| "BW"
-				| "BY"
-				| "BZ"
-				| "CA"
-				| "CC"
-				| "CD"
-				| "CF"
-				| "CG"
-				| "CH"
-				| "CI"
-				| "CK"
-				| "CL"
-				| "CM"
-				| "CN"
-				| "CO"
-				| "CR"
-				| "CU"
-				| "CV"
-				| "CW"
-				| "CX"
-				| "CY"
-				| "CZ"
-				| "DE"
-				| "DJ"
-				| "DK"
-				| "DM"
-				| "DO"
-				| "DZ"
-				| "EC"
-				| "EE"
-				| "EG"
-				| "EH"
-				| "ER"
-				| "ES"
-				| "ET"
-				| "FI"
-				| "FJ"
-				| "FK"
-				| "FM"
-				| "FO"
-				| "FR"
-				| "GA"
-				| "GB"
-				| "GD"
-				| "GE"
-				| "GF"
-				| "GG"
-				| "GH"
-				| "GI"
-				| "GL"
-				| "GM"
-				| "GN"
-				| "GP"
-				| "GQ"
-				| "GR"
-				| "GS"
-				| "GT"
-				| "GU"
-				| "GW"
-				| "GY"
-				| "HK"
-				| "HM"
-				| "HN"
-				| "HR"
-				| "HT"
-				| "HU"
-				| "ID"
-				| "IE"
-				| "IL"
-				| "IM"
-				| "IN"
-				| "IO"
-				| "IQ"
-				| "IR"
-				| "IS"
-				| "IT"
-				| "JE"
-				| "JM"
-				| "JO"
-				| "JP"
-				| "KE"
-				| "KG"
-				| "KH"
-				| "KI"
-				| "KM"
-				| "KN"
-				| "KP"
-				| "KR"
-				| "KW"
-				| "KY"
-				| "KZ"
-				| "LA"
-				| "LB"
-				| "LC"
-				| "LI"
-				| "LK"
-				| "LR"
-				| "LS"
-				| "LT"
-				| "LU"
-				| "LV"
-				| "LY"
-				| "MA"
-				| "MC"
-				| "MD"
-				| "ME"
-				| "MF"
-				| "MG"
-				| "MH"
-				| "MK"
-				| "ML"
-				| "MM"
-				| "MN"
-				| "MO"
-				| "MP"
-				| "MQ"
-				| "MR"
-				| "MS"
-				| "MT"
-				| "MU"
-				| "MV"
-				| "MW"
-				| "MX"
-				| "MY"
-				| "MZ"
-				| "NA"
-				| "NC"
-				| "NE"
-				| "NF"
-				| "NG"
-				| "NI"
-				| "NL"
-				| "NO"
-				| "NP"
-				| "NR"
-				| "NU"
-				| "NZ"
-				| "OM"
-				| "PA"
-				| "PE"
-				| "PF"
-				| "PG"
-				| "PH"
-				| "PK"
-				| "PL"
-				| "PM"
-				| "PN"
-				| "PR"
-				| "PS"
-				| "PT"
-				| "PW"
-				| "PY"
-				| "QA"
-				| "RE"
-				| "RO"
-				| "RS"
-				| "RU"
-				| "RW"
-				| "SA"
-				| "SB"
-				| "SC"
-				| "SD"
-				| "SE"
-				| "SG"
-				| "SH"
-				| "SI"
-				| "SJ"
-				| "SK"
-				| "SL"
-				| "SM"
-				| "SN"
-				| "SO"
-				| "SR"
-				| "SS"
-				| "ST"
-				| "SV"
-				| "SX"
-				| "SY"
-				| "SZ"
-				| "TA"
-				| "TC"
-				| "TD"
-				| "TF"
-				| "TG"
-				| "TH"
-				| "TJ"
-				| "TK"
-				| "TL"
-				| "TM"
-				| "TN"
-				| "TO"
-				| "TR"
-				| "TT"
-				| "TV"
-				| "TW"
-				| "TZ"
-				| "UA"
-				| "UG"
-				| "UY"
-				| "UZ"
-				| "VA"
-				| "VC"
-				| "VE"
-				| "VG"
-				| "VI"
-				| "VN"
-				| "VU"
-				| "WF"
-				| "WS"
-				| "XK"
-				| "YE"
-				| "YT"
-				| "ZA"
-				| "ZM"
-				| "ZW"
-			)[];
+			availableCountries?:
+				| (
+						| "US"
+						| "AC"
+						| "AD"
+						| "AE"
+						| "AF"
+						| "AG"
+						| "AI"
+						| "AL"
+						| "AM"
+						| "AN"
+						| "AO"
+						| "AQ"
+						| "AR"
+						| "AS"
+						| "AT"
+						| "AU"
+						| "AW"
+						| "AX"
+						| "AZ"
+						| "BA"
+						| "BB"
+						| "BD"
+						| "BE"
+						| "BF"
+						| "BG"
+						| "BH"
+						| "BI"
+						| "BJ"
+						| "BL"
+						| "BM"
+						| "BN"
+						| "BO"
+						| "BQ"
+						| "BR"
+						| "BS"
+						| "BT"
+						| "BW"
+						| "BY"
+						| "BZ"
+						| "CA"
+						| "CC"
+						| "CD"
+						| "CF"
+						| "CG"
+						| "CH"
+						| "CI"
+						| "CK"
+						| "CL"
+						| "CM"
+						| "CN"
+						| "CO"
+						| "CR"
+						| "CU"
+						| "CV"
+						| "CW"
+						| "CX"
+						| "CY"
+						| "CZ"
+						| "DE"
+						| "DJ"
+						| "DK"
+						| "DM"
+						| "DO"
+						| "DZ"
+						| "EC"
+						| "EE"
+						| "EG"
+						| "EH"
+						| "ER"
+						| "ES"
+						| "ET"
+						| "FI"
+						| "FJ"
+						| "FK"
+						| "FM"
+						| "FO"
+						| "FR"
+						| "GA"
+						| "GB"
+						| "GD"
+						| "GE"
+						| "GF"
+						| "GG"
+						| "GH"
+						| "GI"
+						| "GL"
+						| "GM"
+						| "GN"
+						| "GP"
+						| "GQ"
+						| "GR"
+						| "GS"
+						| "GT"
+						| "GU"
+						| "GW"
+						| "GY"
+						| "HK"
+						| "HM"
+						| "HN"
+						| "HR"
+						| "HT"
+						| "HU"
+						| "ID"
+						| "IE"
+						| "IL"
+						| "IM"
+						| "IN"
+						| "IO"
+						| "IQ"
+						| "IR"
+						| "IS"
+						| "IT"
+						| "JE"
+						| "JM"
+						| "JO"
+						| "JP"
+						| "KE"
+						| "KG"
+						| "KH"
+						| "KI"
+						| "KM"
+						| "KN"
+						| "KP"
+						| "KR"
+						| "KW"
+						| "KY"
+						| "KZ"
+						| "LA"
+						| "LB"
+						| "LC"
+						| "LI"
+						| "LK"
+						| "LR"
+						| "LS"
+						| "LT"
+						| "LU"
+						| "LV"
+						| "LY"
+						| "MA"
+						| "MC"
+						| "MD"
+						| "ME"
+						| "MF"
+						| "MG"
+						| "MH"
+						| "MK"
+						| "ML"
+						| "MM"
+						| "MN"
+						| "MO"
+						| "MP"
+						| "MQ"
+						| "MR"
+						| "MS"
+						| "MT"
+						| "MU"
+						| "MV"
+						| "MW"
+						| "MX"
+						| "MY"
+						| "MZ"
+						| "NA"
+						| "NC"
+						| "NE"
+						| "NF"
+						| "NG"
+						| "NI"
+						| "NL"
+						| "NO"
+						| "NP"
+						| "NR"
+						| "NU"
+						| "NZ"
+						| "OM"
+						| "PA"
+						| "PE"
+						| "PF"
+						| "PG"
+						| "PH"
+						| "PK"
+						| "PL"
+						| "PM"
+						| "PN"
+						| "PR"
+						| "PS"
+						| "PT"
+						| "PW"
+						| "PY"
+						| "QA"
+						| "RE"
+						| "RO"
+						| "RS"
+						| "RU"
+						| "RW"
+						| "SA"
+						| "SB"
+						| "SC"
+						| "SD"
+						| "SE"
+						| "SG"
+						| "SH"
+						| "SI"
+						| "SJ"
+						| "SK"
+						| "SL"
+						| "SM"
+						| "SN"
+						| "SO"
+						| "SR"
+						| "SS"
+						| "ST"
+						| "SV"
+						| "SX"
+						| "SY"
+						| "SZ"
+						| "TA"
+						| "TC"
+						| "TD"
+						| "TF"
+						| "TG"
+						| "TH"
+						| "TJ"
+						| "TK"
+						| "TL"
+						| "TM"
+						| "TN"
+						| "TO"
+						| "TR"
+						| "TT"
+						| "TV"
+						| "TW"
+						| "TZ"
+						| "UA"
+						| "UG"
+						| "UY"
+						| "UZ"
+						| "VA"
+						| "VC"
+						| "VE"
+						| "VG"
+						| "VI"
+						| "VN"
+						| "VU"
+						| "WF"
+						| "WS"
+						| "XK"
+						| "YE"
+						| "YT"
+						| "ZA"
+						| "ZM"
+						| "ZW"
+				  )[]
+				| undefined;
 		},
 	) => string;
 	/**
@@ -1344,82 +1368,86 @@ export class Composer {
 			/**
 			 * When set, the field becomes required.
 			 */
-			required?: true;
+			required?: true | undefined;
 			/**
 			 * Any extra information that the user may need to fill out the form.
 			 */
-			description?: string;
+			description?: string | undefined;
 			/**
 			 * When set to `"sm"`, the font sizes of the question, description, and answer are made smaller.
 			 */
-			fieldSize?: "sm";
+			fieldSize?: "sm" | undefined;
 			/**
 			 * When set to `"classic"`, the question and description of the form field are made smaller.
 			 */
-			labelStyle?: "classic";
+			labelStyle?: "classic" | undefined;
 			/**
 			 * When set, the question and description of the form field are made smaller.
 			 */
-			subfield?: true;
+			subfield?: true | undefined;
 			/**
 			 * When set, the input is disabled.
 			 */
-			disabled?: true;
+			disabled?: true | undefined;
 			/**
 			 * When set, the input will be automatically focused when the parent slide becomes active, or immediately after page load.
 			 */
-			autofocus?: true;
+			autofocus?: true | undefined;
 			/**
 			 * The id attribute of the form field.
 			 */
-			id?: string;
+			id?: string | undefined;
 			/**
 			 * The CSS class names of the form field.
 			 */
-			classNames?: Array<string>;
+			classNames?: string[] | undefined;
 			/**
 			 * Other HTML attributes of the form field.
 			 */
-			attrs?: {
-				/**
-				 * The name of the attribute.
-				 */
-				name: string;
-				/**
-				 * The value of the attribute.
-				 */
-				value: string;
-			}[];
+			attrs?:
+				| {
+						/**
+						 * The name of the attribute.
+						 */
+						name: string;
+						/**
+						 * The value of the attribute.
+						 */
+						value: string;
+				  }[]
+				| undefined;
 			/**
 			 * Display condition for the form field.
 			 */
-			displayCondition?: {
-				/**
-				 * The names of the form fields or data to use in the condition.
-				 */
-				dependencies: Array<string>;
-				/**
-				 * The actual condition.
-				 */
-				condition: string;
-			};
+			displayCondition?:
+				| {
+						/**
+						 * The names of the form fields or data to use in the condition.
+						 */
+						dependencies: Array<string>;
+						/**
+						 * The actual condition.
+						 */
+						condition: string;
+				  }
+				| undefined;
 		} & {
 			/**
 			 * Sets the `placeholder` attribute of the input.
 			 */
-			placeholder?: string;
+			placeholder?: string | undefined;
 			/**
 			 * If set, this becomes the maximum number of allowed characters in the input.
 			 */
-			maxlength?: number;
+			maxlength?: number | undefined;
 			/**
 			 * If set, the input value must match the given pattern.
 			 */
-			pattern?: string;
+			pattern?: string | undefined;
 			/**
 			 * If set, this becomes the default value of the input.
 			 */
-			value?: string;
+			value?: string | undefined;
 		},
 	) => string;
 	/**
@@ -1451,94 +1479,98 @@ export class Composer {
 			/**
 			 * When set, the field becomes required.
 			 */
-			required?: true;
+			required?: true | undefined;
 			/**
 			 * Any extra information that the user may need to fill out the form.
 			 */
-			description?: string;
+			description?: string | undefined;
 			/**
 			 * When set to `"sm"`, the font sizes of the question, description, and answer are made smaller.
 			 */
-			fieldSize?: "sm";
+			fieldSize?: "sm" | undefined;
 			/**
 			 * When set to `"classic"`, the question and description of the form field are made smaller.
 			 */
-			labelStyle?: "classic";
+			labelStyle?: "classic" | undefined;
 			/**
 			 * When set, the question and description of the form field are made smaller.
 			 */
-			subfield?: true;
+			subfield?: true | undefined;
 			/**
 			 * When set, the input is disabled.
 			 */
-			disabled?: true;
+			disabled?: true | undefined;
 			/**
 			 * When set, the input will be automatically focused when the parent slide becomes active, or immediately after page load.
 			 */
-			autofocus?: true;
+			autofocus?: true | undefined;
 			/**
 			 * The id attribute of the form field.
 			 */
-			id?: string;
+			id?: string | undefined;
 			/**
 			 * The CSS class names of the form field.
 			 */
-			classNames?: Array<string>;
+			classNames?: string[] | undefined;
 			/**
 			 * Other HTML attributes of the form field.
 			 */
-			attrs?: {
-				/**
-				 * The name of the attribute.
-				 */
-				name: string;
-				/**
-				 * The value of the attribute.
-				 */
-				value: string;
-			}[];
+			attrs?:
+				| {
+						/**
+						 * The name of the attribute.
+						 */
+						name: string;
+						/**
+						 * The value of the attribute.
+						 */
+						value: string;
+				  }[]
+				| undefined;
 			/**
 			 * Display condition for the form field.
 			 */
-			displayCondition?: {
-				/**
-				 * The names of the form fields or data to use in the condition.
-				 */
-				dependencies: Array<string>;
-				/**
-				 * The actual condition.
-				 */
-				condition: string;
-			};
+			displayCondition?:
+				| {
+						/**
+						 * The names of the form fields or data to use in the condition.
+						 */
+						dependencies: Array<string>;
+						/**
+						 * The actual condition.
+						 */
+						condition: string;
+				  }
+				| undefined;
 		} & {
 			/**
 			 * Sets the `placeholder` attribute of the input.
 			 */
-			placeholder?: string;
+			placeholder?: string | undefined;
 			/**
 			 * Sets the minimum allowed value.
 			 */
-			min?: number;
+			min?: number | undefined;
 			/**
 			 * Sets the maximum allowed value.
 			 */
-			max?: number;
+			max?: number | undefined;
 			/**
 			 * Sets the stepping interval.
 			 */
-			step?: number;
+			step?: number | undefined;
 			/**
 			 * Text to display before the input as a unit (e.g., `"$"`, `"€"`).
 			 */
-			unit?: string;
+			unit?: string | undefined;
 			/**
 			 * Text to display after the input as a unit (e.g., `"kg"`, `"%"`).
 			 */
-			unitEnd?: string;
+			unitEnd?: string | undefined;
 			/**
 			 * If set, this becomes the default value of the input.
 			 */
-			value?: number;
+			value?: number | undefined;
 		},
 	) => string;
 	/**
@@ -1573,74 +1605,78 @@ export class Composer {
 			/**
 			 * When set, the field becomes required.
 			 */
-			required?: true;
+			required?: true | undefined;
 			/**
 			 * Any extra information that the user may need to fill out the form.
 			 */
-			description?: string;
+			description?: string | undefined;
 			/**
 			 * When set to `"sm"`, the font sizes of the question, description, and answer are made smaller.
 			 */
-			fieldSize?: "sm";
+			fieldSize?: "sm" | undefined;
 			/**
 			 * When set to `"classic"`, the question and description of the form field are made smaller.
 			 */
-			labelStyle?: "classic";
+			labelStyle?: "classic" | undefined;
 			/**
 			 * When set, the question and description of the form field are made smaller.
 			 */
-			subfield?: true;
+			subfield?: true | undefined;
 			/**
 			 * When set, the input is disabled.
 			 */
-			disabled?: true;
+			disabled?: true | undefined;
 			/**
 			 * When set, the input will be automatically focused when the parent slide becomes active, or immediately after page load.
 			 */
-			autofocus?: true;
+			autofocus?: true | undefined;
 			/**
 			 * The id attribute of the form field.
 			 */
-			id?: string;
+			id?: string | undefined;
 			/**
 			 * The CSS class names of the form field.
 			 */
-			classNames?: Array<string>;
+			classNames?: string[] | undefined;
 			/**
 			 * Other HTML attributes of the form field.
 			 */
-			attrs?: {
-				/**
-				 * The name of the attribute.
-				 */
-				name: string;
-				/**
-				 * The value of the attribute.
-				 */
-				value: string;
-			}[];
+			attrs?:
+				| {
+						/**
+						 * The name of the attribute.
+						 */
+						name: string;
+						/**
+						 * The value of the attribute.
+						 */
+						value: string;
+				  }[]
+				| undefined;
 			/**
 			 * Display condition for the form field.
 			 */
-			displayCondition?: {
-				/**
-				 * The names of the form fields or data to use in the condition.
-				 */
-				dependencies: Array<string>;
-				/**
-				 * The actual condition.
-				 */
-				condition: string;
-			};
+			displayCondition?:
+				| {
+						/**
+						 * The names of the form fields or data to use in the condition.
+						 */
+						dependencies: Array<string>;
+						/**
+						 * The actual condition.
+						 */
+						condition: string;
+				  }
+				| undefined;
 		} & {
 			/**
 			 * Sets the placeholder option of the select.
 			 */
-			placeholder?: string;
+			placeholder?: string | undefined;
 			/**
 			 * Array of options as strings or SelectOptionType objects.
 			 */
-			options: (
+			options: Array<
 				| string
 				| {
 						/**
@@ -1650,13 +1686,13 @@ export class Composer {
 						/**
 						 * The value for the option. If not provided, label is used as value.
 						 */
-						value?: string;
+						value?: string | undefined;
 				  }
-			)[];
+			>;
 			/**
 			 * Pre-selected option value.
 			 */
-			selected?: string;
+			selected?: string | undefined;
 		},
 	) => string;
 	/**
@@ -1693,70 +1729,74 @@ export class Composer {
 			/**
 			 * When set, the field becomes required.
 			 */
-			required?: true;
+			required?: true | undefined;
 			/**
 			 * Any extra information that the user may need to fill out the form.
 			 */
-			description?: string;
+			description?: string | undefined;
 			/**
 			 * When set to `"sm"`, the font sizes of the question, description, and answer are made smaller.
 			 */
-			fieldSize?: "sm";
+			fieldSize?: "sm" | undefined;
 			/**
 			 * When set to `"classic"`, the question and description of the form field are made smaller.
 			 */
-			labelStyle?: "classic";
+			labelStyle?: "classic" | undefined;
 			/**
 			 * When set, the question and description of the form field are made smaller.
 			 */
-			subfield?: true;
+			subfield?: true | undefined;
 			/**
 			 * When set, the input is disabled.
 			 */
-			disabled?: true;
+			disabled?: true | undefined;
 			/**
 			 * When set, the input will be automatically focused when the parent slide becomes active, or immediately after page load.
 			 */
-			autofocus?: true;
+			autofocus?: true | undefined;
 			/**
 			 * The id attribute of the form field.
 			 */
-			id?: string;
+			id?: string | undefined;
 			/**
 			 * The CSS class names of the form field.
 			 */
-			classNames?: Array<string>;
+			classNames?: string[] | undefined;
 			/**
 			 * Other HTML attributes of the form field.
 			 */
-			attrs?: {
-				/**
-				 * The name of the attribute.
-				 */
-				name: string;
-				/**
-				 * The value of the attribute.
-				 */
-				value: string;
-			}[];
+			attrs?:
+				| {
+						/**
+						 * The name of the attribute.
+						 */
+						name: string;
+						/**
+						 * The value of the attribute.
+						 */
+						value: string;
+				  }[]
+				| undefined;
 			/**
 			 * Display condition for the form field.
 			 */
-			displayCondition?: {
-				/**
-				 * The names of the form fields or data to use in the condition.
-				 */
-				dependencies: Array<string>;
-				/**
-				 * The actual condition.
-				 */
-				condition: string;
-			};
+			displayCondition?:
+				| {
+						/**
+						 * The names of the form fields or data to use in the condition.
+						 */
+						dependencies: Array<string>;
+						/**
+						 * The actual condition.
+						 */
+						condition: string;
+				  }
+				| undefined;
 		} & {
 			/**
 			 * Array of choices as strings or ChoiceOptionType objects.
 			 */
-			choices: (
+			choices: Array<
 				| string
 				| {
 						/**
@@ -1766,25 +1806,25 @@ export class Composer {
 						/**
 						 * The value for the choice. If not provided, label is used as value.
 						 */
-						value?: string;
+						value?: string | undefined;
 				  }
-			)[];
+			>;
 			/**
 			 * Allow multiple selections.
 			 */
-			multiple?: true;
+			multiple?: true | undefined;
 			/**
 			 * Display choices horizontally.
 			 */
-			horizontal?: true;
+			horizontal?: true | undefined;
 			/**
 			 * Hide the form text.
 			 */
-			hideFormText?: true;
+			hideFormText?: true | undefined;
 			/**
 			 * Array of pre-checked choice values.
 			 */
-			checked?: Array<string>;
+			checked?: string[] | undefined;
 		},
 	) => string;
 	/**
@@ -1823,70 +1863,74 @@ export class Composer {
 			/**
 			 * When set, the field becomes required.
 			 */
-			required?: true;
+			required?: true | undefined;
 			/**
 			 * Any extra information that the user may need to fill out the form.
 			 */
-			description?: string;
+			description?: string | undefined;
 			/**
 			 * When set to `"sm"`, the font sizes of the question, description, and answer are made smaller.
 			 */
-			fieldSize?: "sm";
+			fieldSize?: "sm" | undefined;
 			/**
 			 * When set to `"classic"`, the question and description of the form field are made smaller.
 			 */
-			labelStyle?: "classic";
+			labelStyle?: "classic" | undefined;
 			/**
 			 * When set, the question and description of the form field are made smaller.
 			 */
-			subfield?: true;
+			subfield?: true | undefined;
 			/**
 			 * When set, the input is disabled.
 			 */
-			disabled?: true;
+			disabled?: true | undefined;
 			/**
 			 * When set, the input will be automatically focused when the parent slide becomes active, or immediately after page load.
 			 */
-			autofocus?: true;
+			autofocus?: true | undefined;
 			/**
 			 * The id attribute of the form field.
 			 */
-			id?: string;
+			id?: string | undefined;
 			/**
 			 * The CSS class names of the form field.
 			 */
-			classNames?: Array<string>;
+			classNames?: string[] | undefined;
 			/**
 			 * Other HTML attributes of the form field.
 			 */
-			attrs?: {
-				/**
-				 * The name of the attribute.
-				 */
-				name: string;
-				/**
-				 * The value of the attribute.
-				 */
-				value: string;
-			}[];
+			attrs?:
+				| {
+						/**
+						 * The name of the attribute.
+						 */
+						name: string;
+						/**
+						 * The value of the attribute.
+						 */
+						value: string;
+				  }[]
+				| undefined;
 			/**
 			 * Display condition for the form field.
 			 */
-			displayCondition?: {
-				/**
-				 * The names of the form fields or data to use in the condition.
-				 */
-				dependencies: Array<string>;
-				/**
-				 * The actual condition.
-				 */
-				condition: string;
-			};
+			displayCondition?:
+				| {
+						/**
+						 * The names of the form fields or data to use in the condition.
+						 */
+						dependencies: Array<string>;
+						/**
+						 * The actual condition.
+						 */
+						condition: string;
+				  }
+				| undefined;
 		} & {
 			/**
 			 * Array of picture choices.
 			 */
-			choices: {
+			choices: Array<{
 				/**
 				 * The display text for the choice.
 				 */
@@ -1894,32 +1938,32 @@ export class Composer {
 				/**
 				 * The value for the choice. If not provided, label is used as value.
 				 */
-				value?: string;
+				value?: string | undefined;
 				/**
 				 * The URL of the image.
 				 */
 				image: string;
-			}[];
+			}>;
 			/**
 			 * Allow multiple selections.
 			 */
-			multiple?: true;
+			multiple?: true | undefined;
 			/**
 			 * Make the pictures larger.
 			 */
-			supersize?: true;
+			supersize?: true | undefined;
 			/**
 			 * Hide the text labels.
 			 */
-			hideLabels?: true;
+			hideLabels?: true | undefined;
 			/**
 			 * Hide the form text.
 			 */
-			hideFormText?: true;
+			hideFormText?: true | undefined;
 			/**
 			 * Array of pre-checked choice values.
 			 */
-			checked?: Array<string>;
+			checked?: string[] | undefined;
 		},
 	) => string;
 	/**
@@ -1948,82 +1992,86 @@ export class Composer {
 			/**
 			 * When set, the field becomes required.
 			 */
-			required?: true;
+			required?: true | undefined;
 			/**
 			 * Any extra information that the user may need to fill out the form.
 			 */
-			description?: string;
+			description?: string | undefined;
 			/**
 			 * When set to `"sm"`, the font sizes of the question, description, and answer are made smaller.
 			 */
-			fieldSize?: "sm";
+			fieldSize?: "sm" | undefined;
 			/**
 			 * When set to `"classic"`, the question and description of the form field are made smaller.
 			 */
-			labelStyle?: "classic";
+			labelStyle?: "classic" | undefined;
 			/**
 			 * When set, the question and description of the form field are made smaller.
 			 */
-			subfield?: true;
+			subfield?: true | undefined;
 			/**
 			 * When set, the input is disabled.
 			 */
-			disabled?: true;
+			disabled?: true | undefined;
 			/**
 			 * When set, the input will be automatically focused when the parent slide becomes active, or immediately after page load.
 			 */
-			autofocus?: true;
+			autofocus?: true | undefined;
 			/**
 			 * The id attribute of the form field.
 			 */
-			id?: string;
+			id?: string | undefined;
 			/**
 			 * The CSS class names of the form field.
 			 */
-			classNames?: Array<string>;
+			classNames?: string[] | undefined;
 			/**
 			 * Other HTML attributes of the form field.
 			 */
-			attrs?: {
-				/**
-				 * The name of the attribute.
-				 */
-				name: string;
-				/**
-				 * The value of the attribute.
-				 */
-				value: string;
-			}[];
+			attrs?:
+				| {
+						/**
+						 * The name of the attribute.
+						 */
+						name: string;
+						/**
+						 * The value of the attribute.
+						 */
+						value: string;
+				  }[]
+				| undefined;
 			/**
 			 * Display condition for the form field.
 			 */
-			displayCondition?: {
-				/**
-				 * The names of the form fields or data to use in the condition.
-				 */
-				dependencies: Array<string>;
-				/**
-				 * The actual condition.
-				 */
-				condition: string;
-			};
+			displayCondition?:
+				| {
+						/**
+						 * The names of the form fields or data to use in the condition.
+						 */
+						dependencies: Array<string>;
+						/**
+						 * The actual condition.
+						 */
+						condition: string;
+				  }
+				| undefined;
 		} & {
 			/**
 			 * Number of rating options (1-10). Defaults to `5`.
 			 */
-			outOf?: number;
+			outOf?: number | undefined;
 			/**
 			 * Icon to use for rating. Defaults to `"star"`.
 			 */
-			icon?: "star" | "heart" | "hearts";
+			icon?: "star" | "heart" | "hearts" | undefined;
 			/**
 			 * Pre-selected rating value.
 			 */
-			value?: number;
+			value?: number | undefined;
 			/**
 			 * Whether to hide the numeric labels.
 			 */
-			hideLabels?: true;
+			hideLabels?: true | undefined;
 		},
 	) => string;
 	/**
@@ -2055,94 +2103,98 @@ export class Composer {
 			/**
 			 * When set, the field becomes required.
 			 */
-			required?: true;
+			required?: true | undefined;
 			/**
 			 * Any extra information that the user may need to fill out the form.
 			 */
-			description?: string;
+			description?: string | undefined;
 			/**
 			 * When set to `"sm"`, the font sizes of the question, description, and answer are made smaller.
 			 */
-			fieldSize?: "sm";
+			fieldSize?: "sm" | undefined;
 			/**
 			 * When set to `"classic"`, the question and description of the form field are made smaller.
 			 */
-			labelStyle?: "classic";
+			labelStyle?: "classic" | undefined;
 			/**
 			 * When set, the question and description of the form field are made smaller.
 			 */
-			subfield?: true;
+			subfield?: true | undefined;
 			/**
 			 * When set, the input is disabled.
 			 */
-			disabled?: true;
+			disabled?: true | undefined;
 			/**
 			 * When set, the input will be automatically focused when the parent slide becomes active, or immediately after page load.
 			 */
-			autofocus?: true;
+			autofocus?: true | undefined;
 			/**
 			 * The id attribute of the form field.
 			 */
-			id?: string;
+			id?: string | undefined;
 			/**
 			 * The CSS class names of the form field.
 			 */
-			classNames?: Array<string>;
+			classNames?: string[] | undefined;
 			/**
 			 * Other HTML attributes of the form field.
 			 */
-			attrs?: {
-				/**
-				 * The name of the attribute.
-				 */
-				name: string;
-				/**
-				 * The value of the attribute.
-				 */
-				value: string;
-			}[];
+			attrs?:
+				| {
+						/**
+						 * The name of the attribute.
+						 */
+						name: string;
+						/**
+						 * The value of the attribute.
+						 */
+						value: string;
+				  }[]
+				| undefined;
 			/**
 			 * Display condition for the form field.
 			 */
-			displayCondition?: {
-				/**
-				 * The names of the form fields or data to use in the condition.
-				 */
-				dependencies: Array<string>;
-				/**
-				 * The actual condition.
-				 */
-				condition: string;
-			};
+			displayCondition?:
+				| {
+						/**
+						 * The names of the form fields or data to use in the condition.
+						 */
+						dependencies: Array<string>;
+						/**
+						 * The actual condition.
+						 */
+						condition: string;
+				  }
+				| undefined;
 		} & {
 			/**
 			 * Starting number (`0` or `1`). Defaults to `0`.
 			 */
-			startAt?: number;
+			startAt?: number | undefined;
 			/**
 			 * Maximum scale value (5-10). Defaults to `10`.
 			 */
-			outOf?: number;
+			outOf?: number | undefined;
 			/**
 			 * Label for the start of the scale.
 			 */
-			labelStart?: string;
+			labelStart?: string | undefined;
 			/**
 			 * Label for the end of the scale.
 			 */
-			labelEnd?: string;
+			labelEnd?: string | undefined;
 			/**
 			 * Whether to hide the start label.
 			 */
-			hideLabelStart?: true;
+			hideLabelStart?: true | undefined;
 			/**
 			 * Whether to hide the end label.
 			 */
-			hideLabelEnd?: true;
+			hideLabelEnd?: true | undefined;
 			/**
 			 * Pre-selected value.
 			 */
-			value?: number;
+			value?: number | undefined;
 		},
 	) => string;
 	/**
@@ -2172,86 +2224,90 @@ export class Composer {
 			/**
 			 * When set, the field becomes required.
 			 */
-			required?: true;
+			required?: true | undefined;
 			/**
 			 * Any extra information that the user may need to fill out the form.
 			 */
-			description?: string;
+			description?: string | undefined;
 			/**
 			 * When set to `"sm"`, the font sizes of the question, description, and answer are made smaller.
 			 */
-			fieldSize?: "sm";
+			fieldSize?: "sm" | undefined;
 			/**
 			 * When set to `"classic"`, the question and description of the form field are made smaller.
 			 */
-			labelStyle?: "classic";
+			labelStyle?: "classic" | undefined;
 			/**
 			 * When set, the question and description of the form field are made smaller.
 			 */
-			subfield?: true;
+			subfield?: true | undefined;
 			/**
 			 * When set, the input is disabled.
 			 */
-			disabled?: true;
+			disabled?: true | undefined;
 			/**
 			 * When set, the input will be automatically focused when the parent slide becomes active, or immediately after page load.
 			 */
-			autofocus?: true;
+			autofocus?: true | undefined;
 			/**
 			 * The id attribute of the form field.
 			 */
-			id?: string;
+			id?: string | undefined;
 			/**
 			 * The CSS class names of the form field.
 			 */
-			classNames?: Array<string>;
+			classNames?: string[] | undefined;
 			/**
 			 * Other HTML attributes of the form field.
 			 */
-			attrs?: {
-				/**
-				 * The name of the attribute.
-				 */
-				name: string;
-				/**
-				 * The value of the attribute.
-				 */
-				value: string;
-			}[];
+			attrs?:
+				| {
+						/**
+						 * The name of the attribute.
+						 */
+						name: string;
+						/**
+						 * The value of the attribute.
+						 */
+						value: string;
+				  }[]
+				| undefined;
 			/**
 			 * Display condition for the form field.
 			 */
-			displayCondition?: {
-				/**
-				 * The names of the form fields or data to use in the condition.
-				 */
-				dependencies: Array<string>;
-				/**
-				 * The actual condition.
-				 */
-				condition: string;
-			};
+			displayCondition?:
+				| {
+						/**
+						 * The names of the form fields or data to use in the condition.
+						 */
+						dependencies: Array<string>;
+						/**
+						 * The actual condition.
+						 */
+						condition: string;
+				  }
+				| undefined;
 		} & {
 			/**
 			 * Sets the `placeholder` attribute of the input.
 			 */
-			placeholder?: string;
+			placeholder?: string | undefined;
 			/**
 			 * Sets the minimum allowed datetime value (`"YYYY-MM-DDTHH:mm"`).
 			 */
-			min?: string;
+			min?: string | undefined;
 			/**
 			 * Sets the maximum allowed datetime value (`"YYYY-MM-DDTHH:mm"`).
 			 */
-			max?: string;
+			max?: string | undefined;
 			/**
 			 * Sets the stepping interval.
 			 */
-			step?: string;
+			step?: string | undefined;
 			/**
 			 * Pre-selected datetime value (`"YYYY-MM-DDTHH:mm"`).
 			 */
-			value?: string;
+			value?: string | undefined;
 		},
 	) => string;
 	/**
@@ -2281,86 +2337,90 @@ export class Composer {
 			/**
 			 * When set, the field becomes required.
 			 */
-			required?: true;
+			required?: true | undefined;
 			/**
 			 * Any extra information that the user may need to fill out the form.
 			 */
-			description?: string;
+			description?: string | undefined;
 			/**
 			 * When set to `"sm"`, the font sizes of the question, description, and answer are made smaller.
 			 */
-			fieldSize?: "sm";
+			fieldSize?: "sm" | undefined;
 			/**
 			 * When set to `"classic"`, the question and description of the form field are made smaller.
 			 */
-			labelStyle?: "classic";
+			labelStyle?: "classic" | undefined;
 			/**
 			 * When set, the question and description of the form field are made smaller.
 			 */
-			subfield?: true;
+			subfield?: true | undefined;
 			/**
 			 * When set, the input is disabled.
 			 */
-			disabled?: true;
+			disabled?: true | undefined;
 			/**
 			 * When set, the input will be automatically focused when the parent slide becomes active, or immediately after page load.
 			 */
-			autofocus?: true;
+			autofocus?: true | undefined;
 			/**
 			 * The id attribute of the form field.
 			 */
-			id?: string;
+			id?: string | undefined;
 			/**
 			 * The CSS class names of the form field.
 			 */
-			classNames?: Array<string>;
+			classNames?: string[] | undefined;
 			/**
 			 * Other HTML attributes of the form field.
 			 */
-			attrs?: {
-				/**
-				 * The name of the attribute.
-				 */
-				name: string;
-				/**
-				 * The value of the attribute.
-				 */
-				value: string;
-			}[];
+			attrs?:
+				| {
+						/**
+						 * The name of the attribute.
+						 */
+						name: string;
+						/**
+						 * The value of the attribute.
+						 */
+						value: string;
+				  }[]
+				| undefined;
 			/**
 			 * Display condition for the form field.
 			 */
-			displayCondition?: {
-				/**
-				 * The names of the form fields or data to use in the condition.
-				 */
-				dependencies: Array<string>;
-				/**
-				 * The actual condition.
-				 */
-				condition: string;
-			};
+			displayCondition?:
+				| {
+						/**
+						 * The names of the form fields or data to use in the condition.
+						 */
+						dependencies: Array<string>;
+						/**
+						 * The actual condition.
+						 */
+						condition: string;
+				  }
+				| undefined;
 		} & {
 			/**
 			 * Sets the `placeholder` attribute of the input.
 			 */
-			placeholder?: string;
+			placeholder?: string | undefined;
 			/**
 			 * Sets the minimum allowed date value (`"YYYY-MM-DD"`).
 			 */
-			min?: string;
+			min?: string | undefined;
 			/**
 			 * Sets the maximum allowed date value (`"YYYY-MM-DD"`).
 			 */
-			max?: string;
+			max?: string | undefined;
 			/**
 			 * Sets the stepping interval.
 			 */
-			step?: string;
+			step?: string | undefined;
 			/**
 			 * Pre-selected date value (`"YYYY-MM-DD"`).
 			 */
-			value?: string;
+			value?: string | undefined;
 		},
 	) => string;
 	/**
@@ -2390,86 +2450,90 @@ export class Composer {
 			/**
 			 * When set, the field becomes required.
 			 */
-			required?: true;
+			required?: true | undefined;
 			/**
 			 * Any extra information that the user may need to fill out the form.
 			 */
-			description?: string;
+			description?: string | undefined;
 			/**
 			 * When set to `"sm"`, the font sizes of the question, description, and answer are made smaller.
 			 */
-			fieldSize?: "sm";
+			fieldSize?: "sm" | undefined;
 			/**
 			 * When set to `"classic"`, the question and description of the form field are made smaller.
 			 */
-			labelStyle?: "classic";
+			labelStyle?: "classic" | undefined;
 			/**
 			 * When set, the question and description of the form field are made smaller.
 			 */
-			subfield?: true;
+			subfield?: true | undefined;
 			/**
 			 * When set, the input is disabled.
 			 */
-			disabled?: true;
+			disabled?: true | undefined;
 			/**
 			 * When set, the input will be automatically focused when the parent slide becomes active, or immediately after page load.
 			 */
-			autofocus?: true;
+			autofocus?: true | undefined;
 			/**
 			 * The id attribute of the form field.
 			 */
-			id?: string;
+			id?: string | undefined;
 			/**
 			 * The CSS class names of the form field.
 			 */
-			classNames?: Array<string>;
+			classNames?: string[] | undefined;
 			/**
 			 * Other HTML attributes of the form field.
 			 */
-			attrs?: {
-				/**
-				 * The name of the attribute.
-				 */
-				name: string;
-				/**
-				 * The value of the attribute.
-				 */
-				value: string;
-			}[];
+			attrs?:
+				| {
+						/**
+						 * The name of the attribute.
+						 */
+						name: string;
+						/**
+						 * The value of the attribute.
+						 */
+						value: string;
+				  }[]
+				| undefined;
 			/**
 			 * Display condition for the form field.
 			 */
-			displayCondition?: {
-				/**
-				 * The names of the form fields or data to use in the condition.
-				 */
-				dependencies: Array<string>;
-				/**
-				 * The actual condition.
-				 */
-				condition: string;
-			};
+			displayCondition?:
+				| {
+						/**
+						 * The names of the form fields or data to use in the condition.
+						 */
+						dependencies: Array<string>;
+						/**
+						 * The actual condition.
+						 */
+						condition: string;
+				  }
+				| undefined;
 		} & {
 			/**
 			 * Sets the `placeholder` attribute of the input.
 			 */
-			placeholder?: string;
+			placeholder?: string | undefined;
 			/**
 			 * Sets the minimum allowed time value (`"HH:mm"`).
 			 */
-			min?: string;
+			min?: string | undefined;
 			/**
 			 * Sets the maximum allowed time value (`"HH:mm"`).
 			 */
-			max?: string;
+			max?: string | undefined;
 			/**
 			 * Sets the stepping interval.
 			 */
-			step?: string;
+			step?: string | undefined;
 			/**
 			 * Pre-selected time value (`"HH:mm"`).
 			 */
-			value?: string;
+			value?: string | undefined;
 		},
 	) => string;
 	/**
@@ -2497,78 +2561,82 @@ export class Composer {
 			/**
 			 * When set, the field becomes required.
 			 */
-			required?: true;
+			required?: true | undefined;
 			/**
 			 * Any extra information that the user may need to fill out the form.
 			 */
-			description?: string;
+			description?: string | undefined;
 			/**
 			 * When set to `"sm"`, the font sizes of the question, description, and answer are made smaller.
 			 */
-			fieldSize?: "sm";
+			fieldSize?: "sm" | undefined;
 			/**
 			 * When set to `"classic"`, the question and description of the form field are made smaller.
 			 */
-			labelStyle?: "classic";
+			labelStyle?: "classic" | undefined;
 			/**
 			 * When set, the question and description of the form field are made smaller.
 			 */
-			subfield?: true;
+			subfield?: true | undefined;
 			/**
 			 * When set, the input is disabled.
 			 */
-			disabled?: true;
+			disabled?: true | undefined;
 			/**
 			 * When set, the input will be automatically focused when the parent slide becomes active, or immediately after page load.
 			 */
-			autofocus?: true;
+			autofocus?: true | undefined;
 			/**
 			 * The id attribute of the form field.
 			 */
-			id?: string;
+			id?: string | undefined;
 			/**
 			 * The CSS class names of the form field.
 			 */
-			classNames?: Array<string>;
+			classNames?: string[] | undefined;
 			/**
 			 * Other HTML attributes of the form field.
 			 */
-			attrs?: {
-				/**
-				 * The name of the attribute.
-				 */
-				name: string;
-				/**
-				 * The value of the attribute.
-				 */
-				value: string;
-			}[];
+			attrs?:
+				| {
+						/**
+						 * The name of the attribute.
+						 */
+						name: string;
+						/**
+						 * The value of the attribute.
+						 */
+						value: string;
+				  }[]
+				| undefined;
 			/**
 			 * Display condition for the form field.
 			 */
-			displayCondition?: {
-				/**
-				 * The names of the form fields or data to use in the condition.
-				 */
-				dependencies: Array<string>;
-				/**
-				 * The actual condition.
-				 */
-				condition: string;
-			};
+			displayCondition?:
+				| {
+						/**
+						 * The names of the form fields or data to use in the condition.
+						 */
+						dependencies: Array<string>;
+						/**
+						 * The actual condition.
+						 */
+						condition: string;
+				  }
+				| undefined;
 		} & {
 			/**
 			 * Maximum file size in MB. Defaults to `10`.
 			 */
-			sizeLimit?: number;
+			sizeLimit?: number | undefined;
 			/**
 			 * When set, only image files are accepted.
 			 */
-			imageOnly?: true;
+			imageOnly?: true | undefined;
 			/**
 			 * The current file that exists in the database. Use a URL for best results, for example, https://example.s3.com/image.png.
 			 */
-			currentFile?: string;
+			currentFile?: string | undefined;
 		},
 	) => string;
 	/**
@@ -2591,23 +2659,23 @@ export class Composer {
 		/**
 		 * Logic jump condition that must be `true` for slide to be shown.
 		 */
-		jumpCondition?: string;
+		jumpCondition?: string | undefined;
 		/**
 		 * Progress indicator shown on top (e.g. `"50%"` or `"1/2"`).
 		 */
-		pageProgress?: string;
+		pageProgress?: string | undefined;
 		/**
 		 * Set the alignment of this slide's CTA button.
 		 */
-		buttonAlignment?: "start" | "center" | "end" | "stretch";
+		buttonAlignment?: "center" | "end" | "start" | "stretch" | undefined;
 		/**
 		 * If set, posts form data up to this slide when going to the next one.
 		 */
-		post?: true;
+		post?: true | undefined;
 		/**
 		 * If set, disables the previous button.
 		 */
-		disablePrevious?: true;
+		disablePrevious?: true | undefined;
 	}) => string;
 	/**
 	 * Start slide params.
@@ -2626,11 +2694,11 @@ export class Composer {
 		/**
 		 * Custom text for the start button.
 		 */
-		buttonText?: string;
+		buttonText?: string | undefined;
 		/**
 		 * Set the alignment of this slide's CTA button.
 		 */
-		buttonAlignment?: "start" | "center" | "end" | "stretch";
+		buttonAlignment?: "center" | "end" | "start" | "stretch" | undefined;
 	}) => string;
 	/**
 	 * End slide params.
@@ -2648,7 +2716,7 @@ export class Composer {
 		/**
 		 * URL to redirect to from the end slide.
 		 */
-		redirectUrl?: string;
+		redirectUrl?: string | undefined;
 	}) => string;
 	/**
 	 * Create a data-block.
@@ -2656,7 +2724,7 @@ export class Composer {
 	 * @param {Object} data
 	 * @returns {string}
 	 */
-	dataBlock: (data: any) => string;
+	dataBlock: (data: Object) => string;
 	/**
 	 * Create free-form content.
 	 *
@@ -2685,24 +2753,26 @@ export class Composer {
 			/**
 			 * The id attribute of the element.
 			 */
-			id?: string;
+			id?: string | undefined;
 			/**
 			 * The CSS class names of the element.
 			 */
-			classNames?: Array<string>;
+			classNames?: string[] | undefined;
 			/**
 			 * Other HTML attributes of the element.
 			 */
-			attrs?: {
-				/**
-				 * The name of the attribute.
-				 */
-				name: string;
-				/**
-				 * The value of the attribute.
-				 */
-				value: string;
-			}[];
+			attrs?:
+				| {
+						/**
+						 * The name of the attribute.
+						 */
+						name: string;
+						/**
+						 * The value of the attribute.
+						 */
+						value: string;
+				  }[]
+				| undefined;
 		},
 	) => string;
 	/**
@@ -2718,24 +2788,26 @@ export class Composer {
 			/**
 			 * The id attribute of the element.
 			 */
-			id?: string;
+			id?: string | undefined;
 			/**
 			 * The CSS class names of the element.
 			 */
-			classNames?: Array<string>;
+			classNames?: string[] | undefined;
 			/**
 			 * Other HTML attributes of the element.
 			 */
-			attrs?: {
-				/**
-				 * The name of the attribute.
-				 */
-				name: string;
-				/**
-				 * The value of the attribute.
-				 */
-				value: string;
-			}[];
+			attrs?:
+				| {
+						/**
+						 * The name of the attribute.
+						 */
+						name: string;
+						/**
+						 * The value of the attribute.
+						 */
+						value: string;
+				  }[]
+				| undefined;
 		},
 	) => string;
 	/**
@@ -2751,24 +2823,26 @@ export class Composer {
 			/**
 			 * The id attribute of the element.
 			 */
-			id?: string;
+			id?: string | undefined;
 			/**
 			 * The CSS class names of the element.
 			 */
-			classNames?: Array<string>;
+			classNames?: string[] | undefined;
 			/**
 			 * Other HTML attributes of the element.
 			 */
-			attrs?: {
-				/**
-				 * The name of the attribute.
-				 */
-				name: string;
-				/**
-				 * The value of the attribute.
-				 */
-				value: string;
-			}[];
+			attrs?:
+				| {
+						/**
+						 * The name of the attribute.
+						 */
+						name: string;
+						/**
+						 * The value of the attribute.
+						 */
+						value: string;
+				  }[]
+				| undefined;
 		},
 	) => string;
 	/**
@@ -2784,24 +2858,26 @@ export class Composer {
 			/**
 			 * The id attribute of the element.
 			 */
-			id?: string;
+			id?: string | undefined;
 			/**
 			 * The CSS class names of the element.
 			 */
-			classNames?: Array<string>;
+			classNames?: string[] | undefined;
 			/**
 			 * Other HTML attributes of the element.
 			 */
-			attrs?: {
-				/**
-				 * The name of the attribute.
-				 */
-				name: string;
-				/**
-				 * The value of the attribute.
-				 */
-				value: string;
-			}[];
+			attrs?:
+				| {
+						/**
+						 * The name of the attribute.
+						 */
+						name: string;
+						/**
+						 * The value of the attribute.
+						 */
+						value: string;
+				  }[]
+				| undefined;
 		},
 	) => string;
 	/**
@@ -2817,24 +2893,26 @@ export class Composer {
 			/**
 			 * The id attribute of the element.
 			 */
-			id?: string;
+			id?: string | undefined;
 			/**
 			 * The CSS class names of the element.
 			 */
-			classNames?: Array<string>;
+			classNames?: string[] | undefined;
 			/**
 			 * Other HTML attributes of the element.
 			 */
-			attrs?: {
-				/**
-				 * The name of the attribute.
-				 */
-				name: string;
-				/**
-				 * The value of the attribute.
-				 */
-				value: string;
-			}[];
+			attrs?:
+				| {
+						/**
+						 * The name of the attribute.
+						 */
+						name: string;
+						/**
+						 * The value of the attribute.
+						 */
+						value: string;
+				  }[]
+				| undefined;
 		},
 	) => string;
 	/**
@@ -2850,24 +2928,26 @@ export class Composer {
 			/**
 			 * The id attribute of the element.
 			 */
-			id?: string;
+			id?: string | undefined;
 			/**
 			 * The CSS class names of the element.
 			 */
-			classNames?: Array<string>;
+			classNames?: string[] | undefined;
 			/**
 			 * Other HTML attributes of the element.
 			 */
-			attrs?: {
-				/**
-				 * The name of the attribute.
-				 */
-				name: string;
-				/**
-				 * The value of the attribute.
-				 */
-				value: string;
-			}[];
+			attrs?:
+				| {
+						/**
+						 * The name of the attribute.
+						 */
+						name: string;
+						/**
+						 * The value of the attribute.
+						 */
+						value: string;
+				  }[]
+				| undefined;
 		},
 	) => string;
 	/**
@@ -2883,24 +2963,26 @@ export class Composer {
 			/**
 			 * The id attribute of the element.
 			 */
-			id?: string;
+			id?: string | undefined;
 			/**
 			 * The CSS class names of the element.
 			 */
-			classNames?: Array<string>;
+			classNames?: string[] | undefined;
 			/**
 			 * Other HTML attributes of the element.
 			 */
-			attrs?: {
-				/**
-				 * The name of the attribute.
-				 */
-				name: string;
-				/**
-				 * The value of the attribute.
-				 */
-				value: string;
-			}[];
+			attrs?:
+				| {
+						/**
+						 * The name of the attribute.
+						 */
+						name: string;
+						/**
+						 * The value of the attribute.
+						 */
+						value: string;
+				  }[]
+				| undefined;
 		},
 	) => string;
 	/**
@@ -2916,24 +2998,26 @@ export class Composer {
 			/**
 			 * The id attribute of the element.
 			 */
-			id?: string;
+			id?: string | undefined;
 			/**
 			 * The CSS class names of the element.
 			 */
-			classNames?: Array<string>;
+			classNames?: string[] | undefined;
 			/**
 			 * Other HTML attributes of the element.
 			 */
-			attrs?: {
-				/**
-				 * The name of the attribute.
-				 */
-				name: string;
-				/**
-				 * The value of the attribute.
-				 */
-				value: string;
-			}[];
+			attrs?:
+				| {
+						/**
+						 * The name of the attribute.
+						 */
+						name: string;
+						/**
+						 * The value of the attribute.
+						 */
+						value: string;
+				  }[]
+				| undefined;
 		},
 	) => string;
 	/**
@@ -2949,24 +3033,26 @@ export class Composer {
 			/**
 			 * The id attribute of the element.
 			 */
-			id?: string;
+			id?: string | undefined;
 			/**
 			 * The CSS class names of the element.
 			 */
-			classNames?: Array<string>;
+			classNames?: string[] | undefined;
 			/**
 			 * Other HTML attributes of the element.
 			 */
-			attrs?: {
-				/**
-				 * The name of the attribute.
-				 */
-				name: string;
-				/**
-				 * The value of the attribute.
-				 */
-				value: string;
-			}[];
+			attrs?:
+				| {
+						/**
+						 * The name of the attribute.
+						 */
+						name: string;
+						/**
+						 * The value of the attribute.
+						 */
+						value: string;
+				  }[]
+				| undefined;
 		},
 	) => string;
 	/**
@@ -2982,24 +3068,26 @@ export class Composer {
 			/**
 			 * The id attribute of the element.
 			 */
-			id?: string;
+			id?: string | undefined;
 			/**
 			 * The CSS class names of the element.
 			 */
-			classNames?: Array<string>;
+			classNames?: string[] | undefined;
 			/**
 			 * Other HTML attributes of the element.
 			 */
-			attrs?: {
-				/**
-				 * The name of the attribute.
-				 */
-				name: string;
-				/**
-				 * The value of the attribute.
-				 */
-				value: string;
-			}[];
+			attrs?:
+				| {
+						/**
+						 * The name of the attribute.
+						 */
+						name: string;
+						/**
+						 * The value of the attribute.
+						 */
+						value: string;
+				  }[]
+				| undefined;
 		},
 	) => string;
 	/**
@@ -3021,29 +3109,31 @@ export class Composer {
 			/**
 			 * The id attribute of the element.
 			 */
-			id?: string;
+			id?: string | undefined;
 			/**
 			 * The CSS class names of the element.
 			 */
-			classNames?: Array<string>;
+			classNames?: string[] | undefined;
 			/**
 			 * Other HTML attributes of the element.
 			 */
-			attrs?: {
-				/**
-				 * The name of the attribute.
-				 */
-				name: string;
-				/**
-				 * The value of the attribute.
-				 */
-				value: string;
-			}[];
+			attrs?:
+				| {
+						/**
+						 * The name of the attribute.
+						 */
+						name: string;
+						/**
+						 * The value of the attribute.
+						 */
+						value: string;
+				  }[]
+				| undefined;
 		} & {
 			/**
 			 * The language of the code.
 			 */
-			language?: string;
+			language?: string | undefined;
 		},
 	) => string;
 	/**
@@ -3069,29 +3159,31 @@ export class Composer {
 			/**
 			 * The id attribute of the element.
 			 */
-			id?: string;
+			id?: string | undefined;
 			/**
 			 * The CSS class names of the element.
 			 */
-			classNames?: Array<string>;
+			classNames?: string[] | undefined;
 			/**
 			 * Other HTML attributes of the element.
 			 */
-			attrs?: {
-				/**
-				 * The name of the attribute.
-				 */
-				name: string;
-				/**
-				 * The value of the attribute.
-				 */
-				value: string;
-			}[];
+			attrs?:
+				| {
+						/**
+						 * The name of the attribute.
+						 */
+						name: string;
+						/**
+						 * The value of the attribute.
+						 */
+						value: string;
+				  }[]
+				| undefined;
 		} & {
 			/**
 			 * The data to bind to the division, e.g., `["name", "email", "birthday"]`.
 			 */
-			bind?: Array<string>;
+			bind?: string[] | undefined;
 		},
 	) => string;
 	/**
@@ -3113,30 +3205,31 @@ export class Composer {
 			/**
 			 * The id attribute of the element.
 			 */
-			id?: string;
+			id?: string | undefined;
 			/**
 			 * The CSS class names of the element.
 			 */
-			classNames?: Array<string>;
+			classNames?: string[] | undefined;
 			/**
 			 * Other HTML attributes of the element.
 			 */
-			attrs?: {
-				/**
-				 * The name of the attribute.
-				 */
-				name: string;
-				/**
-				 * The value of the attribute.
-				 */
-				value: string;
-			}[];
+			attrs?:
+				| {
+						/**
+						 * The name of the attribute.
+						 */
+						name: string;
+						/**
+						 * The value of the attribute.
+						 */
+						value: string;
+				  }[]
+				| undefined;
 		} & {
 			/**
 			 * The data to bind to the division, e.g., `["name", "email", "birthday"]`.
 			 */
-			bind?: Array<string>;
+			bind?: string[] | undefined;
 		},
 	) => string;
 }
-import { translations } from "./translations";

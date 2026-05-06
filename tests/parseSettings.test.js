@@ -100,7 +100,6 @@ const expectedSettings2 = {
 	"font-size": "lg",
 	"footer": "hide",
 	"form-delimiter": "\n",
-	"formsmd-branding": "hide",
 	"form-style": "classic",
 	"get-format": "json",
 	"get-objects-name": "examples",

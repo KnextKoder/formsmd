@@ -4,8 +4,9 @@
 		"allowJs": true,
 		"declaration": true,
 		"emitDeclarationOnly": true,
-		"moduleResolution": "node",
+		"ignoreDeprecations": "6.0",
 		"outDir": "types",
+		"rootDir": "src",
 		"target": "es6"
 	}
 }

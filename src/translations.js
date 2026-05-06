@@ -26,9 +26,6 @@ const translations = {
 		"list-check": "Not checked",
 		"list-checked": "Checked",
 		"loading": "Loading",
-		"made-in-btn": 'Made in <strong class="fmd-antialiased">Forms.md</strong>',
-		"made-in-loader":
-			'<div class="fmd-specific-fs-14">Made in</div><div class="fmd-specific-fs-20 fmd-text-emphasis"><strong>Forms.md</strong></div>',
 		"next-btn": "Next",
 		"nps-label-end": "Extremely likely",
 		"nps-label-start": "Not likely at all",
@@ -75,9 +72,6 @@ const translations = {
 		"list-check": "غير محدد",
 		"list-checked": "محدد",
 		"loading": "جاري التحميل",
-		"made-in-btn": 'صنع في <strong class="fmd-antialiased">Forms.md</strong>',
-		"made-in-loader":
-			'<div class="fmd-specific-fs-14">صنع في</div><div class="fmd-specific-fs-20 fmd-text-emphasis"><strong>Forms.md</strong></div>',
 		"next-btn": "التالي",
 		"nps-label-end": "محتمل جداً",
 		"nps-label-start": "غير محتمل إطلاقاً",
@@ -125,9 +119,6 @@ const translations = {
 		"list-check": "চিহ্নিত না",
 		"list-checked": "চিহ্নিত",
 		"loading": "লোড হচ্ছে",
-		"made-in-btn": '<strong class="fmd-antialiased">Forms.md</strong> তে তৈরি',
-		"made-in-loader":
-			'<div class="fmd-specific-fs-20 fmd-text-emphasis"><strong>Forms.md</strong></div><div class="fmd-specific-fs-14">তে তৈরি</div>',
 		"next-btn": "পরবর্তী",
 		"nps-label-end": "অত্যন্ত সম্ভাবনাময়",
 		"nps-label-start": "কোনো সম্ভাবনা নেই",
@@ -324,9 +315,6 @@ const translations = {
 		"list-check": "未チェック",
 		"list-checked": "チェック済み",
 		"loading": "読み込み中",
-		"made-in-btn": '<strong class="fmd-antialiased">Forms.md</strong> で作成',
-		"made-in-loader":
-			'<div class="fmd-specific-fs-14">作成：</div><div class="fmd-specific-fs-20 fmd-text-emphasis"><strong>Forms.md</strong></div>',
 		"next-btn": "次へ",
 		"nps-label-end": "非常にそう思う",
 		"nps-label-start": "全くそう思わない",
@@ -373,9 +361,6 @@ const translations = {
 		"list-check": "Não marcado",
 		"list-checked": "Marcado",
 		"loading": "Carregando",
-		"made-in-btn": 'Feito em <strong class="fmd-antialiased">Forms.md</strong>',
-		"made-in-loader":
-			'<div class="fmd-specific-fs-14">Feito em</div><div class="fmd-specific-fs-20 fmd-text-emphasis"><strong>Forms.md</strong></div>',
 		"next-btn": "Próximo",
 		"nps-label-end": "Extremamente provável",
 		"nps-label-start": "Nada provável",
@@ -422,9 +407,6 @@ const translations = {
 		"list-check": "未选中",
 		"list-checked": "已选中",
 		"loading": "加载中",
-		"made-in-btn": '由 <strong class="fmd-antialiased">Forms.md</strong> 制作',
-		"made-in-loader":
-			'<div class="fmd-specific-fs-14">由</div><div class="fmd-specific-fs-20 fmd-text-emphasis"><strong>Forms.md</strong></div>',
 		"next-btn": "下一步",
 		"nps-label-end": "非常可能",
 		"nps-label-start": "完全不可能",

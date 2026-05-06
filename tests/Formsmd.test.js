@@ -125,7 +125,6 @@ describe("Formsmd", () => {
 			errorFieldKey: "field",
 			errorMessageKey: "message",
 			footer: "",
-			formsmdBranding: "",
 			getHeaders: {},
 			isFullPage: false,
 			paddingInlineBottom: 20,
@@ -172,7 +171,6 @@ describe("Formsmd", () => {
 				errorFieldKey: "customField",
 				errorMessageKey: "customMessage",
 				footer: "show",
-				formsmdBranding: "hide",
 				getHeaders: { Authorization: "Bearer token" },
 				isFullPage: true,
 				paddingInlineBottom: 10,
@@ -214,7 +212,6 @@ describe("Formsmd", () => {
 			expect(customFormsmd.options.errorFieldKey).toBe("customField");
 			expect(customFormsmd.options.errorMessageKey).toBe("customMessage");
 			expect(customFormsmd.options.footer).toBe("show");
-			expect(customFormsmd.options.formsmdBranding).toBe("hide");
 			expect(customFormsmd.options.getHeaders).toEqual({
 				Authorization: "Bearer token",
 			});

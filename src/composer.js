@@ -125,7 +125,6 @@ class Composer {
 	 * @property {string} [fontImportUrl] URL to import custom fonts (must be valid CSS for the `@import` property).
 	 * @property {"sm"|"lg"} [fontSize] Makes the `font-size` of everything on the page smaller or larger.
 	 * @property {string} [formDelimiter] Used to separate parameters when creating form fields. Default is `"|"`.
-	 * @property {"hide"|"show"} [formsmdBranding] Controls visibility of the Forms.md branding.
 	 * @property {"classic"} [formStyle] If set to `"classic"`, the form fields will have a classic appearance.
 	 * @property {"hide"|"show"} [footer] Controls visibility of the footer.
 	 * @property {"json"|"csv"|"tsv"} [getFormat] The format for reading data. Default is `"json"`. [Read docs](https://formsmd.gitbook.io/docs/set-and-read-data).

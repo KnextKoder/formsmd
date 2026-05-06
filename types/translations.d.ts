@@ -22,8 +22,6 @@ export namespace translations {
 		"list-check": string;
 		"list-checked": string;
 		"loading": string;
-		"made-in-btn": string;
-		"made-in-loader": string;
 		"next-btn": string;
 		"nps-label-end": string;
 		"nps-label-start": string;
@@ -68,8 +66,6 @@ export namespace translations {
 		"list-check": string;
 		"list-checked": string;
 		"loading": string;
-		"made-in-btn": string;
-		"made-in-loader": string;
 		"next-btn": string;
 		"nps-label-end": string;
 		"nps-label-start": string;
@@ -114,8 +110,6 @@ export namespace translations {
 		"list-check": string;
 		"list-checked": string;
 		"loading": string;
-		"made-in-btn": string;
-		"made-in-loader": string;
 		"next-btn": string;
 		"nps-label-end": string;
 		"nps-label-start": string;
@@ -298,8 +292,6 @@ export namespace translations {
 		"list-check": string;
 		"list-checked": string;
 		"loading": string;
-		"made-in-btn": string;
-		"made-in-loader": string;
 		"next-btn": string;
 		"nps-label-end": string;
 		"nps-label-start": string;
@@ -344,8 +336,6 @@ export namespace translations {
 		"list-check": string;
 		"list-checked": string;
 		"loading": string;
-		"made-in-btn": string;
-		"made-in-loader": string;
 		"next-btn": string;
 		"nps-label-end": string;
 		"nps-label-start": string;
@@ -390,8 +380,6 @@ export namespace translations {
 		"list-check": string;
 		"list-checked": string;
 		"loading": string;
-		"made-in-btn": string;
-		"made-in-loader": string;
 		"next-btn": string;
 		"nps-label-end": string;
 		"nps-label-start": string;

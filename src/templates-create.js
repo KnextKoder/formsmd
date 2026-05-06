@@ -128,11 +128,7 @@ const madeInLoaderTemplate = `
 	<div class="fmd-main-container">
 		<div class="fmd-loader-container">
 			<div class="fmd-text-center fmd-mb-3">
-				{% if settings["formsmd-branding"] != "hide" %}
-				{{ translations.madeInLoader | safe }}
-				{% else %}
 				<div class="fmd-specific-fs-20 fmd-text-emphasis fmd-fw-bold">{{ translations.loading }}...</div>
-				{% endif %}
 			</div>
 			<div class="fmd-loader-progress" role="status" aria-label="{{ translations.loading }}"></div>
 		</div>
@@ -171,11 +167,7 @@ const bodyTemplate = `
 	<div class="fmd-main-container">
 		<div class="fmd-loader-container">
 			<div class="fmd-text-center fmd-mb-3">
-				{% if settings["formsmd-branding"] != "hide" %}
-				{{ translations.madeInLoader | safe }}
-				{% else %}
 				<div class="fmd-specific-fs-20 fmd-text-emphasis fmd-fw-bold">{{ translations.loading }}...</div>
-				{% endif %}
 			</div>
 			<div class="fmd-loader-progress" role="status" aria-label="{{ translations.loading }}"></div>
 		</div>
@@ -200,11 +192,6 @@ const bodyTemplate = `
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="fmd-icon" aria-hidden="true" focusable="false"><path d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg>
 			</button>
 		</div>
-		{% endif %}
-		{% if settings["formsmd-branding"] != "hide" %}
-		<a href="https://forms.md" target="_blank" class="fmd-btn fmd-btn-accent fmd-btn-control">
-			{{ translations.madeInBtn | safe }}
-		</a>
 		{% endif %}
 	</div>
 </div>
@@ -274,8 +261,7 @@ function createBodyTemplate(settings) {
 	settings["footer-render"] =
 		settings.footer !== "hide" &&
 		(settings["color-scheme-toggle"] === "show" ||
-			(settings["slide-controls"] !== "hide" && settings.page !== "single") ||
-			settings["formsmd-branding"] !== "hide");
+			(settings["slide-controls"] !== "hide" && settings.page !== "single"));
 
 	// Render the template using Nunjucks
 	const localization = settings.localization;
@@ -284,8 +270,6 @@ function createBodyTemplate(settings) {
 		settings: settings,
 		translations: {
 			loading: getTranslation(localization, "loading"),
-			madeInBtn: getTranslation(localization, "made-in-btn"),
-			madeInLoader: getTranslation(localization, "made-in-loader"),
 			nextBtn: getTranslation(localization, "next-btn"),
 			previousBtn: getTranslation(localization, "previous-btn"),
 			toggleColorSchemeBtn: getTranslation(

@@ -9,6 +9,6 @@ export function parseSpreadsheetData(
 	data: string,
 	delimiter: string,
 ): {
-	dataSpreadsheet: any;
-	dataNormalized: any[];
+	dataSpreadsheet: Object;
+	dataNormalized: Object[];
 };

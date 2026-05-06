@@ -26,8 +26,7 @@ const expectedTemplate1 = `
 	<div class="fmd-main-container">
 		<div class="fmd-loader-container">
 			<div class="fmd-text-center fmd-mb-3">
-				<div class="fmd-specific-fs-14">Made in</div>
-				<div class="fmd-specific-fs-20 fmd-text-emphasis"><strong>Forms.md</strong></div>
+				<div class="fmd-specific-fs-20 fmd-text-emphasis fmd-fw-bold">Loading...</div>
 			</div>
 			<div class="fmd-loader-progress" role="status" aria-label="Loading"></div>
 		</div>
@@ -48,9 +47,7 @@ const expectedTemplate1 = `
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="fmd-icon" aria-hidden="true" focusable="false"><path d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg>
 			</button>
 		</div>
-		<a href="https://forms.md" target="_blank" class="fmd-btn fmd-btn-accent fmd-btn-control">
-			Made in <strong class="fmd-antialiased">Forms.md</strong>
-		</a>
+
 	</div>
 </div>
 `;
@@ -107,8 +104,7 @@ const expectedTemplate2 = `
 	<div class="fmd-main-container">
 		<div class="fmd-loader-container">
 			<div class="fmd-text-center fmd-mb-3">
-				<div class="fmd-specific-fs-14">Made in</div>
-				<div class="fmd-specific-fs-20 fmd-text-emphasis"><strong>Forms.md</strong></div>
+				<div class="fmd-specific-fs-20 fmd-text-emphasis fmd-fw-bold">Loading...</div>
 			</div>
 			<div class="fmd-loader-progress" role="status" aria-label="Loading"></div>
 		</div>
@@ -129,9 +125,7 @@ const expectedTemplate2 = `
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="fmd-icon" aria-hidden="true" focusable="false"><path d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg>
 			</button>
 		</div>
-		<a href="https://forms.md" target="_blank" class="fmd-btn fmd-btn-accent fmd-btn-control">
-			Made in <strong class="fmd-antialiased">Forms.md</strong>
-		</a>
+
 	</div>
 </div>
 `;
@@ -188,8 +182,7 @@ const expectedTemplate3 = `
 	<div class="fmd-main-container">
 		<div class="fmd-loader-container">
 			<div class="fmd-text-center fmd-mb-3">
-				<div class="fmd-specific-fs-20 fmd-text-emphasis"><strong>Forms.md</strong></div>
-				<div class="fmd-specific-fs-14">তে তৈরি</div>
+				<div class="fmd-specific-fs-20 fmd-text-emphasis fmd-fw-bold">লোড হচ্ছে...</div>
 			</div>
 			<div class="fmd-loader-progress" role="status" aria-label="লোড হচ্ছে"></div>
 		</div>
@@ -210,10 +203,7 @@ const expectedTemplate3 = `
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="fmd-icon" aria-hidden="true" focusable="false"><path d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg>
 			</button>
 		</div>
-		<a href="https://forms.md" target="_blank" class="fmd-btn fmd-btn-accent fmd-btn-control">
-			<strong class="fmd-antialiased">Forms.md</strong> তে তৈরি
-		</a>
-	</div>
+		</div>
 </div>
 `;
 
@@ -255,8 +245,7 @@ const expectedTemplate4 = `
 	<div class="fmd-main-container">
 		<div class="fmd-loader-container">
 			<div class="fmd-text-center fmd-mb-3">
-				<div class="fmd-specific-fs-14">Made in</div>
-				<div class="fmd-specific-fs-20 fmd-text-emphasis"><strong>Forms.md</strong></div>
+				<div class="fmd-specific-fs-20 fmd-text-emphasis fmd-fw-bold">Loading...</div>
 			</div>
 			<div class="fmd-loader-progress" role="status" aria-label="Loading"></div>
 		</div>
@@ -314,8 +303,7 @@ const expectedTemplate5 = `
 	<div class="fmd-main-container">
 		<div class="fmd-loader-container">
 			<div class="fmd-text-center fmd-mb-3">
-				<div class="fmd-specific-fs-14">Made in</div>
-				<div class="fmd-specific-fs-20 fmd-text-emphasis"><strong>Forms.md</strong></div>
+				<div class="fmd-specific-fs-20 fmd-text-emphasis fmd-fw-bold">Loading...</div>
 			</div>
 			<div class="fmd-loader-progress" role="status" aria-label="Loading"></div>
 		</div>
@@ -363,8 +351,7 @@ const expectedTemplate6 = `
 	<div class="fmd-main-container">
 		<div class="fmd-loader-container">
 			<div class="fmd-text-center fmd-mb-3">
-				<div class="fmd-specific-fs-14">Made in</div>
-				<div class="fmd-specific-fs-20 fmd-text-emphasis"><strong>Forms.md</strong></div>
+				<div class="fmd-specific-fs-20 fmd-text-emphasis fmd-fw-bold">Loading...</div>
 			</div>
 			<div class="fmd-loader-progress" role="status" aria-label="Loading"></div>
 		</div>
@@ -406,8 +393,7 @@ const expectedTemplate7 = `
 	<div class="fmd-main-container">
 		<div class="fmd-loader-container">
 			<div class="fmd-text-center fmd-mb-3">
-				<div class="fmd-specific-fs-14">Made in</div>
-				<div class="fmd-specific-fs-20 fmd-text-emphasis"><strong>Forms.md</strong></div>
+				<div class="fmd-specific-fs-20 fmd-text-emphasis fmd-fw-bold">Loading...</div>
 			</div>
 			<div class="fmd-loader-progress" role="status" aria-label="Loading"></div>
 		</div>
@@ -425,9 +411,7 @@ const expectedTemplate7 = `
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="fmd-icon" aria-hidden="true" focusable="false"><path d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg>
 			</button>
 		</div>
-		<a href="https://forms.md" target="_blank" class="fmd-btn fmd-btn-accent fmd-btn-control">
-			Made in <strong class="fmd-antialiased">Forms.md</strong>
-		</a>
+
 	</div>
 </div>
 `;
@@ -462,21 +446,13 @@ const expectedTemplate8 = `
 	<div class="fmd-main-container">
 		<div class="fmd-loader-container">
 			<div class="fmd-text-center fmd-mb-3">
-				<div class="fmd-specific-fs-14">Made in</div>
-				<div class="fmd-specific-fs-20 fmd-text-emphasis"><strong>Forms.md</strong></div>
+				<div class="fmd-specific-fs-20 fmd-text-emphasis fmd-fw-bold">Loading...</div>
 			</div>
 			<div class="fmd-loader-progress" role="status" aria-label="Loading"></div>
 		</div>
 	</div>
 </div>
 
-<div class="fmd-footer">
-	<div class="fmd-footer-inner">
-		<a href="https://forms.md" target="_blank" class="fmd-btn fmd-btn-accent fmd-btn-control">
-			Made in <strong class="fmd-antialiased">Forms.md</strong>
-		</a>
-	</div>
-</div>
 `;
 
 test("Case 8 (no footer slide controls)", () => {
@@ -493,7 +469,7 @@ test("Case 8 (no footer slide controls)", () => {
 	);
 	expect(result8.settings).toMatchObject({
 		"color-scheme": "light",
-		"footer-render": true,
+		"footer-render": false,
 		"header-render": false,
 		"localization": "en",
 		"page": "form-slides",
@@ -511,21 +487,13 @@ const expectedTemplate9 = `
 	<div class="fmd-main-container">
 		<div class="fmd-loader-container">
 			<div class="fmd-text-center fmd-mb-3">
-				<div class="fmd-specific-fs-14">Made in</div>
-				<div class="fmd-specific-fs-20 fmd-text-emphasis"><strong>Forms.md</strong></div>
+				<div class="fmd-specific-fs-20 fmd-text-emphasis fmd-fw-bold">Loading...</div>
 			</div>
 			<div class="fmd-loader-progress" role="status" aria-label="Loading"></div>
 		</div>
 	</div>
 </div>
 
-<div class="fmd-footer">
-	<div class="fmd-footer-inner">
-		<a href="https://forms.md" target="_blank" class="fmd-btn fmd-btn-accent fmd-btn-control">
-			Made in <strong class="fmd-antialiased">Forms.md</strong>
-		</a>
-	</div>
-</div>
 `;
 
 test("Case 9 (no footer slide controls with page setting)", () => {
@@ -541,7 +509,7 @@ test("Case 9 (no footer slide controls with page setting)", () => {
 	);
 	expect(result9.settings).toMatchObject({
 		"color-scheme": "light",
-		"footer-render": true,
+		"footer-render": false,
 		"header-render": false,
 		"localization": "en",
 		"page": "single",
@@ -583,7 +551,6 @@ const expectedTemplate10 = `
 test("Case 10 (no Forms.md branding)", () => {
 	const result10 = createBodyTemplate({
 		"color-scheme": "light",
-		"formsmd-branding": "hide",
 		"header": "hide",
 		"localization": "en",
 		"page": "slides",
@@ -595,7 +562,6 @@ test("Case 10 (no Forms.md branding)", () => {
 	expect(result10.settings).toMatchObject({
 		"color-scheme": "light",
 		"footer-render": true,
-		"formsmd-branding": "hide",
 		"header-render": false,
 		"localization": "en",
 		"page": "slides",
