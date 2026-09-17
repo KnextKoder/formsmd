@@ -1,17 +1,21 @@
 import globals from "globals";
-import pluginJs from "@eslint/js";
+import tsParser from "@typescript-eslint/parser";
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
 	{
-		files: ["**/*.js"],
+		ignores: ["dist/**", "lib/**", "types/**", "node_modules/**"],
+	},
+	{
+		files: ["**/*.js", "**/*.ts", "**/*.mjs"],
+		languageOptions: {
+			parser: tsParser,
+			sourceType: "module",
+			globals: { ...globals.browser, ...globals.node },
+		},
 		rules: {
 			"dot-notation": "error",
 			"curly": "error",
-		},
-		languageOptions: {
-			sourceType: "commonjs",
-			globals: { ...globals.browser, ...globals.node },
 		},
 	},
 ];

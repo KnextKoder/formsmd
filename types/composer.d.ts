@@ -267,16 +267,7 @@ export class Composer {
 		 * Sets the language for automatic translation. Default is `"en"`.
 		 */
 		localization?:
-			| "en"
-			| "ar"
-			| "bn"
-			| "de"
-			| "es"
-			| "fr"
-			| "ja"
-			| "pt"
-			| "zh"
-			| undefined;
+			"en" | "ar" | "bn" | "de" | "es" | "fr" | "ja" | "pt" | "zh" | undefined;
 		/**
 		 * Sets the author metadata.
 		 */

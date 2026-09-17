@@ -3,8 +3,8 @@ var path = require("path");
 module.exports = {
 	mode: "production",
 	entry: {
-		formsmd: "./src/main.js",
-		composer: "./src/composer.js",
+		formsmd: "./lib/main.js",
+		composer: "./lib/composer.js",
 	},
 	output: {
 		filename: "[name].bundle.min.js",

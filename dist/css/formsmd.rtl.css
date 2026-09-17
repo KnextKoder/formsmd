@@ -17,14 +17,17 @@
 
 	/* Font family */
 
-	--fmd-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto,
-		"Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif,
-		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-	--fmd-font-serif: Iowan Old Style, Apple Garamond, Baskerville,
-		Times New Roman, Droid Serif, Times, Source Serif Pro, serif,
-		Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
-	--fmd-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
-		"Liberation Mono", "Courier New", monospace;
+	--fmd-font-sans-serif:
+		system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans",
+		"Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+		"Segoe UI Symbol", "Noto Color Emoji";
+	--fmd-font-serif:
+		Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif,
+		Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji,
+		Segoe UI Symbol;
+	--fmd-font-monospace:
+		SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+		monospace;
 	--fmd-body-font-family: var(--fmd-font-sans-serif);
 
 	/* Font size */
@@ -73,16 +76,16 @@
 	--fmd-body-bg-r: 255;
 	--fmd-body-bg-g: 255;
 	--fmd-body-bg-b: 255;
-	--fmd-body-bg-rgb: var(--fmd-body-bg-r), var(--fmd-body-bg-g),
-		var(--fmd-body-bg-b);
+	--fmd-body-bg-rgb:
+		var(--fmd-body-bg-r), var(--fmd-body-bg-g), var(--fmd-body-bg-b);
 
 	/* Color */
 
 	--fmd-body-color-r: 0;
 	--fmd-body-color-g: 0;
 	--fmd-body-color-b: 0;
-	--fmd-body-color-rgb: var(--fmd-body-color-r), var(--fmd-body-color-g),
-		var(--fmd-body-color-b);
+	--fmd-body-color-rgb:
+		var(--fmd-body-color-r), var(--fmd-body-color-g), var(--fmd-body-color-b);
 	--fmd-body-color: rgb(
 		calc((var(--fmd-body-color-r) * 3 + var(--fmd-body-bg-r)) / 4),
 		calc((var(--fmd-body-color-g) * 3 + var(--fmd-body-bg-g)) / 4),
@@ -95,13 +98,14 @@
 	--fmd-accent-r: 30;
 	--fmd-accent-g: 55;
 	--fmd-accent-b: 153;
-	--fmd-accent-rgb: var(--fmd-accent-r), var(--fmd-accent-g),
-		var(--fmd-accent-b);
+	--fmd-accent-rgb:
+		var(--fmd-accent-r), var(--fmd-accent-g), var(--fmd-accent-b);
 	--fmd-accent-foreground-r: 255;
 	--fmd-accent-foreground-g: 255;
 	--fmd-accent-foreground-b: 255;
-	--fmd-accent-foreground-rgb: var(--fmd-accent-foreground-r),
-		var(--fmd-accent-foreground-g), var(--fmd-accent-foreground-b);
+	--fmd-accent-foreground-rgb:
+		var(--fmd-accent-foreground-r), var(--fmd-accent-foreground-g),
+		var(--fmd-accent-foreground-b);
 	--fmd-danger-rgb: 171, 33, 33;
 	--fmd-danger-foreground-rgb: 255, 255, 255;
 	--fmd-warning-rgb: 246, 207, 9;
@@ -190,7 +194,8 @@
 	--fmd-action-font-size: var(--fmd-font-size-base);
 	--fmd-action-line-height: var(--fmd-line-height-base);
 	--fmd-action-border-radius: var(--fmd-border-radius);
-	--fmd-action-focus-shadow: 0 0 0 2px rgb(var(--fmd-body-bg-rgb)),
+	--fmd-action-focus-shadow:
+		0 0 0 2px rgb(var(--fmd-body-bg-rgb)),
 		0 0 0 5px rgba(var(--fmd-accent-rgb), 0.5);
 
 	/* Form */
@@ -259,8 +264,8 @@
 	--fmd-check-checked-border-color: rgb(var(--fmd-accent-rgb));
 	--fmd-check-checked-shadow: inset 0 0 0 1px
 		var(--fmd-check-checked-border-color);
-	--fmd-check-checked-focus-shadow: var(--fmd-check-checked-shadow),
-		var(--fmd-check-focus-shadow);
+	--fmd-check-checked-focus-shadow:
+		var(--fmd-check-checked-shadow), var(--fmd-check-focus-shadow);
 	--fmd-check-mark-width: 36px;
 	--fmd-check-mark-height: 30px;
 
@@ -1587,8 +1592,8 @@
 	line-height: var(--fmd-input-line-height);
 	color: var(--fmd-input-color);
 	background-color: var(--fmd-input-bg);
-	background-image: var(--fmd-input-select-bg-img),
-		var(--fmd-input-select-bg-icon, none);
+	background-image:
+		var(--fmd-input-select-bg-img), var(--fmd-input-select-bg-icon, none);
 	background-repeat: no-repeat;
 	background-position: left var(--fmd-input-padding-x) center;
 	background-size: 16px 12px;
@@ -2751,7 +2756,8 @@
 		(
 				(var(--fmd-font-size-base) * var(--fmd-line-height-base)) -
 					var(--fmd-font-size-base)
-			) / 2
+			) /
+			2
 	);
 	right: 0;
 	margin-left: 0;

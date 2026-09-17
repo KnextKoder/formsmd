@@ -1,12 +1,18 @@
 {
-	"include": ["src/*.js"],
+	"include": ["src/**/*"],
 	"compilerOptions": {
+		"target": "ES2022",
+		"module": "commonjs",
 		"allowJs": true,
 		"declaration": true,
-		"emitDeclarationOnly": true,
-		"ignoreDeprecations": "6.0",
-		"outDir": "types",
-		"rootDir": "src",
-		"target": "es6"
+		"declarationMap": true,
+		"sourceMap": true,
+		"outDir": "./lib",
+		"rootDir": "./src",
+		"strict": false,
+		"noImplicitAny": false,
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true
 	}
 }

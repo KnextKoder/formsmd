@@ -1,16 +1,15 @@
 #!/usr/bin/env node
 
-"use strict";
-
-const { getDefaultSettings, parseSettings } = require("../lib/settings-parse");
-const fs = require("fs-extra");
-const { cwd } = require("node:process");
-var nunjucks = require("nunjucks");
-const path = require("path");
-var slugify = require("slugify");
+import { getDefaultSettings, parseSettings } from "../src/settings-parse";
+import fs from "fs-extra";
+import { cwd } from "node:process";
+import nunjucks from "nunjucks";
+import path from "path";
+import slugify from "slugify";
+import yargs from "yargs/yargs";
 
 // Set up the command line arguments
-const argv = require("yargs/yargs")(process.argv.slice(2)).options({
+const argv: any = (yargs as any)(process.argv.slice(2)).options({
 	"input": {
 		alias: "i",
 		default: "src",
@@ -56,18 +55,18 @@ const baseFile = fs.existsSync(`${inputDir}/base.html`)
 const base = fs.readFileSync(baseFile).toString();
 
 // Read the input directory
-fs.readdir(inputDir, function (err, files) {
+fs.readdir(inputDir, function (err: any, files: string[]) {
 	// Handle error
 	if (err) {
 		return console.error("Unable to read input directory: " + err);
 	}
 
 	// Go through each file to find Markdown ones
-	files.forEach(function (file) {
+	files.forEach(function (file: string) {
 		if (file.endsWith(".md")) {
 			try {
 				// The route is the slugified file name (with extension)
-				const route = slugify(file.substring(0, file.length - 3), {
+				const route = (slugify as any)(file.substring(0, file.length - 3), {
 					lower: true,
 					strict: true,
 				});
