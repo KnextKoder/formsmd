@@ -1887,9 +1887,12 @@ describe("Formsmd", () => {
 			const token = await formsmd.executeRecaptcha();
 
 			expect((global as any).grecaptcha.ready).toHaveBeenCalled();
-			expect((global as any).grecaptcha.execute).toHaveBeenCalledWith("test-site-key", {
-				action: "test_action",
-			});
+			expect((global as any).grecaptcha.execute).toHaveBeenCalledWith(
+				"test-site-key",
+				{
+					action: "test_action",
+				},
+			);
 			expect(token).toBe(mockToken);
 
 			// Cleanup
